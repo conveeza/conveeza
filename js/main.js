@@ -133,19 +133,3 @@ jQuery(document).ready(function( $ ) {
 
 });
 
-
-//forms
-var form = document.getElementById('convee-it-form');
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  fetch(form.action, {
-      method : "POST",
-      body: new FormData(document.getElementById("convee-it-form")),
-  }).then(
-      response => response.json()
-  ).then((html) => {
-    // you can put any JS code here
-    alert('Form has been successfully submitted, Thank you, we will get back to you soon!')
-  });
-}); 
-

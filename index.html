@@ -390,7 +390,7 @@
               <h2>R1 000.00</h2>
               <ul class="list-unstyled">
                 <li><b>Basic</b><br> website</li>
-                <li>Support within <b>24/7</b></li>
+                <li>Support within <b>72hrs</b></li>
                 <li>No SSL <i class="fa fa-lock"></i></li>
                 <li>Static website 
                   <i class="fa fa-question-circle" id="quest">
@@ -398,10 +398,17 @@
                       A static web page is a web page that is 
                       delivered to the user's web browser exactly as stored,
                       in contrast to dynamic web pages which are generated
-                      by a web application.
+                      by a web application. Examples include: <br>
+                      - resume websites. <br>
+                      - portfolio websites.<br>
+                      - brochure websites.<br>
+                      - one-off landing pages.<br>
+                      - informational sites.<br>
+                      - read-only sites.
                     </span>
                   </i>
                 </li>
+                <li>.</li>
                 <li>.</li>
               </ul>
               <div class="table_btn">
@@ -418,9 +425,10 @@
               <h2>R1 500.00</h2>
               <ul class="list-unstyled">
                 <li><b>Advanced basic 2.0</b><br> website</li>
-                <li>Support within <b>24/7</b></li>
+                <li>Support within <b>48hrs</b></li>
                 <li><b></b>Database Storage</li>
                 <li>SSL Protection <i class="fa fa-lock"></i></li>
+                <li>.</li>
                 <li>.</li>
               </ul>
               <div class="table_btn">
@@ -437,10 +445,11 @@
               <h2>R2 800.00</h2>
               <ul class="list-unstyled">
                 <li><b>General/eccomerce</b><br> website</li>
-                <li>Support within <b>24/7</b></li>
+                <li>Support within <b>24hrs</b></li>
                 <li><b></b>Database Storage</li>
                 <li>SSL Protection <i class="fa fa-lock"></i></li>
                 <li>E-commerce features</li>
+                <li>.</li>
               </ul>
               <div class="table_btn">
                 <a href="#" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>
@@ -456,10 +465,11 @@
               <h2>R6 000.00</h2>
               <ul class="list-unstyled">
                 <li><b>Advanced application</b> website</li>
-                <li>Support within <b>24/7</b></li>
+                <li>Support within <b>24hrs</b></li>
                 <li><b></b>Database Storage</li>
                 <li>SSL Protection <i class="fa fa-lock"></i></li>
                 <li>E-commerce features</li>
+                <li>Enterprise management</li>
               </ul>
               <div class="table_btn">
                 <a href="#" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>
@@ -483,7 +493,7 @@
           <div class="col-md-9 col-lg-6">
             <form class="form-inline" method="POST" action="#">
 
-              <input type="email" class="form-control " placeholder="Email Adress" name="email">
+              <input type="email" class="form-control " placeholder="Email Adress" name="Email Address">
               <button type="submit" class="btn btn-default"><i class="fa fa-location-arrow"></i>Subscribe</button>
 
             </form>
@@ -556,24 +566,33 @@
 
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="mailto:milombopha@gmail.com" method="post" role="form" class="contactForm">
+            <form id="contactfrm" class="contactForm">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 3 chars" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validation"></div>
               </div>
+
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <select type="text" class="form-control" name="Subject" id="subject" data-msg="Please enter at least 8 chars of subject" required> 
+                  <option value="Select a subject">Select a subject</option>
+                  <option value="General">General</option>
+                  <option value="Package pricing">Package pricing</option>
+                  <option value="Web Designs">Web Designs</option>
+                </select>
                 <div class="validation"></div>
               </div>
+
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="Message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validation"></div>
               </div>
-              <div class="text-center"><button type="submit">Send Message <i class="fa fa-paper-plane"></i></button></div>
+              <div class="text-center">
+                <button type="submit">Send Message <i class="fa fa-paper-plane"></i></button>
+              </div>
             </form>
           </div>
         </div>
@@ -688,6 +707,7 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script src="js/frmsubmission.js"></script>
 
 </body>
 </html>
