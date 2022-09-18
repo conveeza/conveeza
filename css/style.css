@@ -1371,3 +1371,50 @@ body.mobile-nav-active #mobile-nav-toggle i {
    animation-duration: 5s;
    animation: ease-in;
 }
+
+.btn-sec {
+  color: rgb(0, 0, 0);
+  background-color: #f1f1f100;
+  border-color: #f1f1f100;
+}
+
+.btn-sec:hover {
+  color: rgb(70, 70, 70);
+  background-color: #c5c5c500;
+  border-color: #adadad00;
+  transition: ease-in 0.3s;
+}
+
+#quest{
+  color: #505050;
+}
+
+#quest:hover{
+  color: #55b03f;
+  transition: ease-in 0.2s;
+}
+
+#quest {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+#quest .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgb(24, 24, 24);
+  color: #fff;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+#quest:hover .tooltiptext {
+  visibility: visible;
+}
