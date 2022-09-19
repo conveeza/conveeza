@@ -133,3 +133,235 @@ jQuery(document).ready(function( $ ) {
 
 });
 
+
+function popPackDet(n){
+  var btnId = n;
+  var modTitle = document.getElementById("buyModalLongTitle");
+  var modBody = document.getElementById("buyModalbody");
+
+  if(btnId == "basicpack")
+  {
+    modTitle.innerHTML = "Buy Package: Basic"
+
+    modBody.innerHTML = `
+    <h3>R1 000.00</h3><br>
+    <p>Package form; please fill in the form to purchase the package.</p>
+
+    <form>
+    <h4>Personal Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
+    <div class="validation"></div>
+    </div>
+
+    <br>
+    <h4>Website Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <select type="text" name="Website type" class="form-control" id="webtype"required/>
+      <option>Select a website option</option>
+      <option>Personal</option>
+      <option>Business</option>
+    </select>
+    <div class="validation"></div>
+    </div>
+
+    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
+    </form>`;
+
+  }
+  else if(btnId == "advbasic2.0pack")
+  {
+    modTitle.innerHTML = "Buy Package: Advanced Basic 2.0"
+
+    modBody.innerHTML = `
+    <h3>R1 500.00</h3><br>
+    <p>Package form; please fill in the form to purchase the package.</p>
+
+    <form>
+    <h4>Personal Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
+    <div class="validation"></div>
+    </div>
+
+    <br>
+    <h4>Website Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <select type="text" name="Website type" class="form-control" id="webtype"required/>
+      <option>Select a website option</option>
+      <option>Personal</option>
+      <option>Business</option>
+    </select>
+    <div class="validation"></div>
+    </div>
+
+    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
+    </form>`;
+
+  }
+  else if(btnId == "geneccompack")
+  {
+    modTitle.innerHTML = "Buy Package: Business"
+
+    modBody.innerHTML = `
+    <h3>R2 800.00</h3><br>
+    <p>Package form; please fill in the form to purchase the package.</p>
+
+    <form>
+    <h4>Personal Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
+    <div class="validation"></div>
+    </div>
+
+    <br>
+    <h4>Website Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Domain Name" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <select type="text" name="Website type" class="form-control" id="webtype"required/>
+      <option>Select a website option</option>
+      <option>General Information</option>
+      <option>E-commerce</option>
+    </select>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Company Name" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Company Regnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
+    <div class="validation"></div>
+    </div>
+
+    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
+    </form>`;
+
+  }
+  else if(btnId == "entpropack")
+  {
+    modTitle.innerHTML = "Buy Package: Pro Enterprise"
+
+    modBody.innerHTML = `
+    <h3>R6 000.00</h3><br>
+    <p>Package form; please fill in the form to purchase the package.</p>
+
+    <form>
+    <h4>Personal Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
+    <div class="validation"></div>
+    </div>
+
+    <br>
+    <h4>Website Details</h4>
+    <br>
+
+    <div class="form-group">
+    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Domain Name" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <select type="text" name="Website type" class="form-control" id="webtype"required/>
+      <option>Select a website option</option>
+      <option>General Information</option>
+      <option>E-commerce</option>
+    </select>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Company Name" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Company Regnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
+    <div class="validation"></div>
+    </div>
+
+    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
+    </form>`;
+  }
+}
