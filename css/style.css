@@ -1412,9 +1412,24 @@ body.mobile-nav-active #mobile-nav-toggle i {
 
   /* Position the tooltip */
   position: absolute;
+  left: -150px;
+  top: 20px;
   z-index: 1;
 }
 
 #quest:hover .tooltiptext {
   visibility: visible;
+}
+
+.msg-notification{
+  color: #71c55d;
+  transition: ease-in 0.3s;
+}
+
+#subnotification{
+  display: none;
+}
+
+#subnotification2{
+  display: none;
 }

@@ -5,15 +5,68 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbypHOF70Y4uqCnHPPzUHb
   
     form.addEventListener('submit', e => {
       e.preventDefault()
+
+      getDateTime();
+
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
 
-        document.getElementById("orderForm").reset();   
-        cicr(); 
+         
+        completedSub(); 
+        document.getElementById("contactfrm").reset();  
     })
 
 function clearForm(){
-    document.getElementById("orderForm").reset();
-    document.getElementsByClassName("itm-lable").value = "0";
+    document.getElementById("contactfrm").reset();
+
 }
+
+function completedSub(){
+    $("#subnotification").fadeIn(3000);
+    $("#subnotification").fadeOut(4000);          
+}
+
+function getDateTime(){
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
+
+    document.getElementById("Timestamp").value = dateTime;
+}
+
+
+//subscription form
+//https://script.google.com/macros/s/AKfycby8gKt6wO_DLchwZpm8ojAcjOQIbCtlvLmA9tjPCpyziNY3YCptPjhcaO4nwbh-UjSO/exec
+
+const subscriberscriptURL = 'https://script.google.com/macros/s/AKfycby8gKt6wO_DLchwZpm8ojAcjOQIbCtlvLmA9tjPCpyziNY3YCptPjhcaO4nwbh-UjSO/exec'
+const subform = document.forms['suscriberfrm']
+  
+    subform.addEventListener('submit', e => {
+      e.preventDefault()
+
+      getDateTimesub();
+
+      fetch(subscriberscriptURL, { method: 'POST', body: new FormData(subform)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+
+         
+        completedSubnews(); 
+        document.getElementById("suscriberfrm").reset();  
+    })
+
+    function getDateTimesub(){
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+    
+        document.getElementById("Timestampsub").value = dateTime;
+    }
+
+    function completedSubnews(){
+        $("#subnotification2").fadeIn(3000);
+        $("#subnotification2").fadeOut(4000);          
+    }
