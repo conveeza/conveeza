@@ -50,7 +50,7 @@ ticket register from form
         modTitle.innerHTML = "submitting registration";
         modbody.innerHTML = `<br><br>
         <center><img src="imgc/loader.gif" alt="loading..." width="50%"></center><br><br>`;
-        modfoot.innerHTML = "You are being registered on our system";
+        modfoot.innerHTML = "<h4>You are being registered on our system</h4";
 
         const myTimeout = setTimeout(loadedfn, 3000);
 
@@ -60,7 +60,7 @@ ticket register from form
             <center><img src="img/newuser.png" alt="newuser" width="20%"</center>
             <br><br>
             <h4>You have been successfully registered!</h4>`;
-            modfoot.innerHTML = `<button class="btn btn-success tk-medium">Close</button>`;
+            modfoot.innerHTML = `<button class="btn btn-success tk-medium" data-dismiss="modal">Close</button>`;
           }
         
     }
