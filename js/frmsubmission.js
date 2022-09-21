@@ -92,3 +92,4 @@ const subform = document.forms['suscriberfrm']
         $("#subnotification2").fadeIn(3000);
         $("#subnotification2").fadeOut(4000);          
     }
+

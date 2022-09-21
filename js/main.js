@@ -383,6 +383,7 @@ function popuRegLoginModal(a){
     <form id="newuserFrm" class="form">
 
     <div class="form-group">
+    <input type="text" name="Timestamp" id="tkTimestampsub" hidden>
     <label>Select an sccount type</label>
     <select type="text" name="Account type" class="form-control" id="acctype" required/>
       <option>Individual</option>
@@ -398,7 +399,7 @@ function popuRegLoginModal(a){
     </div>
 
     <div class="form-group">
-    <input type="text" name="Phone" class="form-control" id="uPhone" placeholder="Phonenumber" required/>
+    <input type="text" name="Phone" class="form-control" id="uphone" placeholder="Phonenumber" required/>
     <div class="validation"></div>
     </div>
 
@@ -408,11 +409,11 @@ function popuRegLoginModal(a){
     </div>
 
     <div class="form-group">
-    <input type="text" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
+    <input type="password" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
     <div class="validation"></div>
     </div>
 
-    <button type="button" id="newuserfrmSub" class="form-control btn btn-success tk-medium"><i class="fa fa-user-plus"></i>&nbsp;&nbsp; Register</button>
+    <button type="button" id="newuserfrmSub" class="form-control btn btn-success tk-medium" onclick="subfrmRegister()"><i class="fa fa-user-plus"></i>&nbsp;&nbsp; Register</button>
     </form>`;
 
     modfoot.innerHTML = `<p>By clicking on Register you agree to the <a href="#">terms of service</a> and <a href="#">privacy</a> on
@@ -432,7 +433,7 @@ function popuRegLoginModal(a){
     <div class="validation"></div>
     </div>
     <div class="form-group">
-    <input type="text" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
+    <input type="password" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
     <div class="validation"></div>
     </div>
 
