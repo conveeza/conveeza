@@ -12,7 +12,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbypHOF70Y4uqCnHPPzUHb
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
 
-         
+        //sendEmail();
         completedSub(); 
         document.getElementById("contactfrm").reset();  
     })
@@ -36,6 +36,28 @@ function getDateTime(){
     document.getElementById("Timestamp").value = dateTime;
 }
 
+/*function sendEmail(){
+    var custName = document.getElementById("name").value;
+    var custSubject = document.getElementById("subject").value;
+    var custEmail = document.getElementById("email").value;
+    var custMsg = document.getElementById("messg").value;
+
+    Email.send({
+        Host : "smtp.gmail.com",
+        Username : "convee.za@gmail.com",
+        Password : "mila2002",
+        To : 'convee.za@gmail.com',
+        From : custEmail,
+        Subject : custSubject,
+        Body : "Message: " + custMsg
+    }).then(
+      message => alert(message)
+    );
+}*/
+
+/*=====================================
+ Subscription form
+======================================*/
 
 //subscription form
 //https://script.google.com/macros/s/AKfycby8gKt6wO_DLchwZpm8ojAcjOQIbCtlvLmA9tjPCpyziNY3YCptPjhcaO4nwbh-UjSO/exec

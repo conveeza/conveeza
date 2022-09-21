@@ -365,3 +365,43 @@ function popPackDet(n){
     </form>`;
   }
 }
+
+function popuRegLoginModal(a){
+  var btnlinkID = a;
+  var modTitle = document.getElementById("register&loginmodTitle");
+  var modbody= document.getElementById("register&loginmodbody");
+  var modfoot = document.getElementById("register&loginmodfoot");
+
+  if(btnlinkID == "registerbtn"){
+    modTitle.innerHTML = "Register";
+
+    modbody.innerHTML = ``;
+
+    modfoot.innerHTML = `<p>By clicking on Register you agree to the <a href="#">terms of service</a> and <a href="#">privacy</a> on
+    this site and wish to submit your registration.</p>`;
+  }
+  else if(btnlinkID == "loginlink"){
+    modTitle.innerHTML = "Login";
+
+    modbody.innerHTML = `
+    <br>
+    <center><img src="img/lock.png" alt="lock" width="20%"</center>
+    <br>
+    <br>
+    <form>
+    <div class="form-group">
+    <input type="email" name="Email" class="form-control" id="logEmail" placeholder="Email" required/>
+    <div class="validation"></div>
+    </div>
+    <div class="form-group">
+    <input type="email" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
+    <div class="validation"></div>
+    </div>
+
+    <button type="button" class="form-control btn btn-success tk-medium"><i class="fa fa-sign-in"></i>&nbsp;&nbsp; Log In</button>
+    </form>
+    <center><a href="#!">Forgot Password</a></center>`;
+
+    modfoot.innerHTML = `<p>By clicking on Log in, you agree to the <a href="#">terms of service</a> on this website.</p>`;
+  }
+}

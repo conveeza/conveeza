@@ -138,7 +138,7 @@ span {
   left: 0;
   top: 0;
   right: 0;
-  height: 95px;
+  height: 99px;
   z-index: 3;
   transition: all 0.5s ease;
   box-shadow:0 0 40px rgba(100, 100, 100, 0.7);
@@ -1432,4 +1432,163 @@ body.mobile-nav-active #mobile-nav-toggle i {
 
 #subnotification2{
   display: none;
+}
+
+.greencol{
+  color: #71c55d;
+}
+
+.tk-white{
+  color: white;
+}
+
+.tk-gold{
+ color: #D3A02B;
+}
+
+.tk-gold-bg{
+  background-color: #D3A02B;
+ }
+ 
+ .tk-large{
+  font-size: large;
+ }
+
+ .tk-medium{
+  font-size: medium;
+ }
+
+ .tk-small{
+  font-size: small;
+ }
+
+ .tk-xlarge{
+  font-size: x-large;
+ }
+
+ .tk-nav:hover{
+  color: #71c55d;
+ }
+
+ /*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Nav Menu Essentials */
+.tk-nav-menu, .tk-nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tk-nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+
+.tk-nav-menu li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.tk-nav-menu > li {
+  float: left;
+}
+
+.tk-nav-menu li:hover > ul,
+.tk-nav-menu li.sfHover > ul {
+  display: block;
+}
+
+.tk-nav-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+.tk-nav-menu ul li {
+  min-width: 180px;
+}
+
+/* Nav Menu Arrows */
+.sf-arrows .sf-with-ul {
+  padding-right: 22px;
+}
+
+.sf-arrows .sf-with-ul:after {
+  content: "\f107";
+  position: absolute;
+  right: 8px;
+  margin-top: 1px;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+  content: "\f105";
+}
+
+/* Nav Meu Container */
+#tk-nav-menu-container {
+  float: right;
+  margin: 0 0 0 0;
+}
+
+@media (max-width: 1024px) {
+  #tk-nav-menu-container {
+    display: none;
+  }
+}
+
+/* Nav Meu Styling */
+.tk-nav-menu a {
+  padding: 8px 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  outline: none;
+  letter-spacing: 0;
+  transition: 0.3s;
+  
+}
+
+.tk-nav-menu li:hover > a, .tk-nav-menu > .tk-menu-active > a {
+  color: #71c55d;
+}
+
+.tk-nav-menu > li {
+  margin-left: 10px;
+}
+
+.tk-nav-menu ul {
+  margin: 0;
+  padding: 10px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  background: #fff;
+}
+
+.tk-nav-menu ul li {
+  transition: 0.3s;
+}
+
+.tk-nav-menu ul li a {
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+  display: block;
+  font-size: 14px;
+  text-transform: none;
+}
+
+.tk-nav-menu ul li:hover > a {
+  color: #71c55d;
+}
+
+.tk-nav-menu ul ul {
+  margin: 0;
 }
