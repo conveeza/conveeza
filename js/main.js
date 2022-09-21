@@ -36,8 +36,8 @@ jQuery(document).ready(function( $ ) {
   });
 
   // Mobile Navigation
-  if ($('#nav-menu-container').length) {
-    var $mobile_nav = $('#nav-menu-container').clone().prop({
+  if ($('#nav-menu-container, #tk-nav-menu-container').length) {
+    var $mobile_nav = $('#nav-menu-container, #tk-nav-menu-container').clone().prop({
       id: 'mobile-nav'
     });
     $mobile_nav.find('> ul').attr({
@@ -372,7 +372,7 @@ function popuRegLoginModal(a){
   var modbody= document.getElementById("register&loginmodbody");
   var modfoot = document.getElementById("register&loginmodfoot");
 
-  if(btnlinkID == "registerbtn"){
+  if(btnlinkID == "registerbtn" || btnlinkID == "registerLink"){
     modTitle.innerHTML = "Register";
 
     modbody.innerHTML = `
@@ -419,7 +419,7 @@ function popuRegLoginModal(a){
     modfoot.innerHTML = `<p>By clicking on Register you agree to the <a href="#">terms of service</a> and <a href="#">privacy</a> on
     this site and wish to submit your registration.</p>`;
   }
-  else if(btnlinkID == "loginlink"){
+  else if(btnlinkID == "loginlink" || btnlinkID == "loginlink2"){
     modTitle.innerHTML = "Login";
 
     modbody.innerHTML = `
