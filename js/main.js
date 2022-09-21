@@ -375,7 +375,45 @@ function popuRegLoginModal(a){
   if(btnlinkID == "registerbtn"){
     modTitle.innerHTML = "Register";
 
-    modbody.innerHTML = ``;
+    modbody.innerHTML = `
+    <br>
+    <center><img src="img/newuser.png" alt="newuser" width="20%"</center>
+    <br>
+    <br>
+    <form id="newuserFrm" class="form">
+
+    <div class="form-group">
+    <label>Select an sccount type</label>
+    <select type="text" name="Account type" class="form-control" id="acctype" required/>
+      <option>Individual</option>
+      <option>Organisation/Company</option>
+    </select>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <label>Account Details</label>
+    <input type="text" name="Name" class="form-control" id="uname" placeholder="Name & Surname" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Phone" class="form-control" id="uPhone" placeholder="Phonenumber" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="email" name="Email" class="form-control" id="logEmail" placeholder="Email" required/>
+    <div class="validation"></div>
+    </div>
+
+    <div class="form-group">
+    <input type="text" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
+    <div class="validation"></div>
+    </div>
+
+    <button type="button" id="newuserfrmSub" class="form-control btn btn-success tk-medium"><i class="fa fa-user-plus"></i>&nbsp;&nbsp; Register</button>
+    </form>`;
 
     modfoot.innerHTML = `<p>By clicking on Register you agree to the <a href="#">terms of service</a> and <a href="#">privacy</a> on
     this site and wish to submit your registration.</p>`;
@@ -388,17 +426,17 @@ function popuRegLoginModal(a){
     <center><img src="img/lock.png" alt="lock" width="20%"</center>
     <br>
     <br>
-    <form>
+    <form id="loginFrm" class="form">
     <div class="form-group">
     <input type="email" name="Email" class="form-control" id="logEmail" placeholder="Email" required/>
     <div class="validation"></div>
     </div>
     <div class="form-group">
-    <input type="email" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
+    <input type="text" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
     <div class="validation"></div>
     </div>
 
-    <button type="button" class="form-control btn btn-success tk-medium"><i class="fa fa-sign-in"></i>&nbsp;&nbsp; Log In</button>
+    <button type="button" id="loginfrmSub" class="form-control btn btn-success tk-medium"><i class="fa fa-sign-in"></i>&nbsp;&nbsp; Log In</button>
     </form>
     <center><a href="#!">Forgot Password</a></center>`;
 
