@@ -2,6 +2,8 @@
 ticket register from form
 ======================================*/
    function subfrmRegister() {
+    getDateTimetk();
+
      var name = document.getElementById("uname").value;
      var acctype = document.getElementById("acctype").value;
      var phone = document.getElementById("uphone").value;
@@ -10,7 +12,8 @@ ticket register from form
      var email = document.getElementById("logEmail").value;
      var uID = name.substring(3)+"MVTK";
 
-        getDateTimetk();
+     document.getElementById("newuserfrmSub").disabled = true;
+       
         fetch("https://api.apispreadsheets.com/data/xghqCJm5xZ7gvVAw/", {
             method: "POST",
             body: JSON.stringify({"data": 
@@ -64,5 +67,6 @@ ticket register from form
           }
         
     }
+    
 
    
