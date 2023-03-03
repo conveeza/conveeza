@@ -1,0 +1,86 @@
+body {
+    background-color: rgb(29, 29, 29);
+    color: white;
+    scroll-behavior: smooth 0.2s;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.body-dv {
+    width: 96%;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #73AD21;
+    transition: ease-in 0.3s;
+}
+
+.rcorners3 {
+    border-radius: 15px 50px;
+    background: #77a94a;
+    padding: 15px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.rcorners2 {
+    border-radius: 15px 50px;
+    background: #e9d02c;
+    padding: 15px;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.mybtn-main {
+    padding: 8px 20px 8px 20px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-style: solid;
+    border-color: #77a94a;
+    border-radius: 20px;
+    background: #77a94a;
+}
+
+.mybtn-main:hover {
+    border-color: #99c374;
+    background: #8bb169;
+    color: #e9d02c;
+    transition: ease-in-out 0.3s;
+}
+
+.frm-bg{
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(56, 56, 56);
+}
+
+.form-control{
+    background-color: rgb(77, 77, 77);  
+    color: white;
+}
+.form-control::placeholder{
+    color: rgb(146, 146, 146);
+}
+
+.block-image{
+    border-radius: 50px;
+}
+
+.brand{
+    position: absolute;
+    top: 10px;
+    right: 10px
+}
