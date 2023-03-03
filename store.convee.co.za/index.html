@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Convee</title>
+
+
+    <!--Bootstrap-->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!--Styles-->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+        <ul class="navbar nav nav-item">
+            <li class="">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<body class="body-content">
+    <img class="brand" src="img/main-logo.png" width="12%">
+
+    <div class="body-dv">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2></h2>
+                <div class="rcorners3">
+                    <center>
+                        500ml bottle
+                        <a href="">
+                            <img src="img/dwater500ml.jfif" width="50%" class="block-image">
+                        </a>
+                    </center>
+                </div>
+                <h2></h2>
+                <div class="rcorners3">
+                    <center>
+                        750ml bottle
+                        <a href="">
+                            <img src="img/dwater750ml.jfif" width="50%" class="block-image">
+                        </a>
+                    </center>
+                </div>
+                <h2></h2>
+                <div class="rcorners3">
+                    <center>
+                        1lt bottle
+                        <a href="">
+                            <img src="img/dwater1lt.jfif" width="50%" class="block-image">
+                        </a>
+                    </center>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <h4>Register</h4>
+                <P>Enter your details below to create an Order.</P>
+                <div class="row">
+                    <div class="col-sm-5 frm-bg">
+                        <form class="form">
+                            <div class="form-group">
+                                <label for="">Name</label>
+                                <input class="form-control" id="name" type="text" placeholder="Name & Surname...">
+                            </div>
+                            <div class="form-group">
+                                <label for="Email">Email</label>
+                                <input class="form-control" id="Email" type="text" placeholder="Email...">
+                            </div>
+                            <div class="form-group">
+                                <label for="Phone">Phone</label>
+                                <input class="form-control" id="Phone" type="text" placeholder="Phonenumber...">
+                            </div>
+
+                            <center>
+                                <button type="button" class="mybtn-main">Start Order</button>
+                            </center>
+                        </form>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-6 frm-bg">
+                        <form class="form">
+                            <div class="form-group">
+                                <label for="">Product</label>
+                                <select class="form-control" id="name">
+                                    <option>Select an item...</option>
+                                    <option value="500ml">500ml designer water</option>
+                                    <option value="750ml">750ml desinger water</option>
+                                    <option value="1liter">1lt designer water</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Qty">Quantity</label>
+                                <input class="form-control" id="Qty" type="number">
+                            </div>
+                            <div class="form-group">
+                                <label for="Phone">Order Total (R)</label>
+                                <input class="form-control" disabled id="Total" type="text">
+                            </div>
+
+                            <center>
+                                <button type="button" class="mybtn-main">Submit Order</button>
+                            </center>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Javascript-->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script srd="js/main.js"></script>
+</body>
+
+</html>
