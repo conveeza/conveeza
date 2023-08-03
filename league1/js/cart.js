@@ -35,9 +35,24 @@ function init() {
       var mytble = document.getElementById("mytble");
       var myteamList = document.getElementById("myteams");
 
-      for (let i = 1; i < stats.length; i++) {
+      for (let i = 1; i < stats.length ; i++) {
+        // for( let j = 0; j < stats.length - i - 1; j++) {
+        //   if (stats[j].c[5].v < stats[j + 1].c[5].v) {
 
-        var team= stats[i].c[0].v;
+        //     // Swap the positions of items[j] and items[j+1]
+        //     const temp = stats[j];
+        //     stats[j] = stats[j + 1];
+        //     stats[j + 1] = temp;
+            
+        //   }       
+        // }
+        
+        var colo="";
+        if (points == "-" && match == "-"){
+          colo = "pink";       
+        }
+
+        var team = stats[i].c[0].v;
         var match = stats[i].c[1].v;
         var wins = stats[i].c[2].v;
         var loses = stats[i].c[3].v;
@@ -45,10 +60,6 @@ function init() {
         var points = stats[i].c[5].v;
         var penilise = stats[i].c[6].v;
 
-        var colo="";
-        if (points == "-" && match == "-"){
-          colo = "pink";       
-        }
         mytble.innerHTML+=`
         <tr class="${colo} text-left">
           <td>${team}</td>
@@ -62,6 +73,9 @@ function init() {
 
         myteamList.innerHTML+=`
         <li><i class="fa fa-angle-right"></i>${team}</li>`
+
+        console.log(stats);   
       }
+         
     });
 }
