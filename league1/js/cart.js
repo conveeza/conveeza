@@ -73,8 +73,6 @@ function init() {
 
         myteamList.innerHTML+=`
         <li><i class="fa fa-angle-right"></i>${team}</li>`
-
-        console.log(stats);   
       }
          
     });
