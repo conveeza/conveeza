@@ -35,7 +35,7 @@ function init() {
       var mytble = document.getElementById("mytble");
       var myteamList = document.getElementById("myteams");
 
-      for (let i = 1; i < stats.length ; i++) {
+      for (let i = 0; i < stats.length ; i++) {
         // for( let j = 0; j < stats.length - i - 1; j++) {
         //   if (stats[j].c[5].v < stats[j + 1].c[5].v) {
 
