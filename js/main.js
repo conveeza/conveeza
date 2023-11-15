@@ -41,10 +41,10 @@ jQuery(document).ready(function( $ ) {
   if(windowResponseUrl.includes("200%20OK%20success%20")){
 
     var mymessage = window.location.href.toString().replace("https://convee.co.za/?message=200%20OK%20success%20", "").replace("%20", " ");
-    
+
     document.getElementById("alertsDiv").innerHTML = `
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Success!</strong> ${mymessage}.
+          <strong>Success!</strong> ${mymessage}. Thank you, our team will contact you soon.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
