@@ -39,7 +39,7 @@ jQuery(document).ready(function( $ ) {
   var windowResponseUrl = window.location.href;
   if(windowResponseUrl.includes("200%20OK%20success%20")){
 
-    var mymessage = window.location.href.replace("https://convee.co.za?message=200%20OK%20success%20", "").replace("%20", " ");
+    var mymessage = window.location.href.toString().replace("https://convee.co.za?message=200%20OK%20success%20", "").replace("%20", " ");
 
     document.getElementById("alertsDiv").innerHTML = `
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -52,7 +52,7 @@ jQuery(document).ready(function( $ ) {
 
     setTimeout( ()=>{
       $(".alert").alert('close')
-    }, 3000)
+    }, 5000)
   }
 
   // Mobile Navigation
