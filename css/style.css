@@ -1592,3 +1592,11 @@ body.mobile-nav-active #mobile-nav-toggle i {
 .tk-nav-menu ul ul {
   margin: 0;
 }
+
+.payDiv{
+  display: none;
+}
+
+#spinnersLoad{
+  display: none;
+}

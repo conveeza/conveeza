@@ -35,6 +35,26 @@ jQuery(document).ready(function( $ ) {
     speed: 400
   });
 
+//This function shows alerts after talking to server
+  var windowResponseUrl = window.location.href;
+  if(windowResponseUrl.includes("200%20OK%20success%20")){
+
+    var mymessage = window.location.href.replace("https://convee.co.za?message=200%20OK%20success%20", "").replace("%20", " ");
+
+    document.getElementById("alertsDiv").innerHTML = `
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Success!</strong> ${mymessage}.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    `;
+
+    setTimeout( ()=>{
+      $(".alert").alert('close')
+    }, 3000)
+  }
+
   // Mobile Navigation
   if ($('#nav-menu-container, #tk-nav-menu-container').length) {
     var $mobile_nav = $('#nav-menu-container, #tk-nav-menu-container').clone().prop({
@@ -138,54 +158,75 @@ function popPackDet(n){
   var btnId = n;
   var modTitle = document.getElementById("buyModalLongTitle");
   var modBody = document.getElementById("buyModalbody");
+  var serverApi = "https://riversideholdings.co.za/Convee"
 
   if(btnId == "basicpack")
   {
     modTitle.innerHTML = "Buy Package: Basic"
 
     modBody.innerHTML = `
-    <h3>R1 000.00</h3><br>
-    <p>Package form; please fill in the form to purchase the package.</p>
+    <h3>R1 500.00</h3><br>
+  
+    <form action="${serverApi}/AddCustomer" method="post" class="form-customer">
+      <p>Package form; please fill in the form to purchase the package.</p>
+      <h4>Personal Details</h4>
+      <br>
 
-    <form>
-    <h4>Personal Details</h4>
-    <br>
+      <div class="form-group">
+      <input type="text" name="fullName" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+      <div class="validation"></div>
+      </div>
 
-    <div class="form-group">
-    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
+      <div class="form-group">
+      <input type="text" name="phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+      <div class="validation"></div>
+      </div>
+
+      <div class="form-group">
+      <input type="email" name="email" class="form-control" id="buyemail" placeholder="Email address" required/>
+      <div class="validation"></div>
+      </div>
+
+      <br>
+      <h4>Website Details</h4>
+      <br>
+
+      <div class="form-group">
+      <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+      <div class="validation"></div>
+      </div>
+
+      <div class="form-group">
+      <select type="text" name="Websitetype" class="form-control" id="webtype"required/>
+        <option value="">Select a website option</option>
+        <option value="Personal">Personal</option>
+        <option value="Business">Business</option>
+      </select>
+      <div class="validation"></div>
+      </div> 
+      <button type="submit" class="form-control btn btn-primary" onclick="">Submit</button>
+    </form>
+
+    <div id="spinnersLoad" class="text-center">
+      <br>
+      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
+      <p class="text-success">Loading...</p>
     </div>
 
-    <div class="form-group">
-    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
-    <div class="validation"></div>
-    </div>
-
-    <br>
-    <h4>Website Details</h4>
-    <br>
-
-    <div class="form-group">
-    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <select type="text" name="Website type" class="form-control" id="webtype"required/>
-      <option>Select a website option</option>
-      <option>Personal</option>
-      <option>Business</option>
-    </select>
-    <div class="validation"></div>
-    </div>
-
-    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
-    </form>`;
+    <div class="payDiv">
+      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
+      <p>Our team will contact you soon</p>
+        <form action="https://www.payfast.co.za/eng/process" method="post">
+          <input type="hidden" name="merchant_id" value="15534190">
+          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
+          <input type="hidden" name="amount" value="1500.00">
+          <input type="hidden" name="item_name" value="Package-Basic">
+          <input type="hidden" name="return_url" value="https://convee.co.za">
+          <input type="hidden" name="cancel_url" value="https://convee.co.za">
+          <input type="submit" class="form-control btn btn-success" value="Pay Now">
+          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
+        </form>
+    </div>`;
 
   }
   else if(btnId == "advbasic2.0pack")
@@ -193,10 +234,11 @@ function popPackDet(n){
     modTitle.innerHTML = "Buy Package: Advanced Basic 2.0"
 
     modBody.innerHTML = `
-    <h3>R1 500.00</h3><br>
+    <h3>R3 000.00</h3><br>
+
+    <form action="${serverApi}" method="post" class="form-customer">
     <p>Package form; please fill in the form to purchase the package.</p>
 
-    <form>
     <h4>Personal Details</h4>
     <br>
 
@@ -220,21 +262,42 @@ function popPackDet(n){
     <br>
 
     <div class="form-group">
-    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <select type="text" name="Website type" class="form-control" id="webtype"required/>
-      <option>Select a website option</option>
-      <option>Personal</option>
-      <option>Business</option>
+    <select type="text" name="Websitetype" class="form-control" id="webtype"required/>
+      <option value="">Select a website option</option>
+      <option value="Personal">Personal</option>
+      <option value="Business">Business</option>
     </select>
     <div class="validation"></div>
     </div>
 
-    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
-    </form>`;
+    <button type="button" class="form-control btn btn-primary" onclick="showPay()">Submit</button>
+    </form>
+
+    <div id="spinnersLoad" class="text-center">
+      <br>
+      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
+      <p class="text-success">Loading...</p>
+    </div>
+
+    <div class="payDiv">
+      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
+      <p>Our team will contact you soon</p>
+        <form action="https://www.payfast.co.za/eng/process" method="post">
+          <input type="hidden" name="merchant_id" value="15534190">
+          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
+          <input type="hidden" name="amount" value="3000.00">
+          <input type="hidden" name="item_name" value="Package-Advanced Basic 2.0">
+          <input type="hidden" name="return_url" value="https://convee.co.za">
+          <input type="hidden" name="cancel_url" value="https://convee.co.za">
+          <input type="submit" class="form-control btn btn-success" value="Pay Now">
+          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
+        </form>
+    </div>`;
 
   }
   else if(btnId == "geneccompack")
@@ -242,10 +305,11 @@ function popPackDet(n){
     modTitle.innerHTML = "Buy Package: Business"
 
     modBody.innerHTML = `
-    <h3>R2 800.00</h3><br>
+    <h3>R5 000.00</h3><br>
+   
+    <form action="${serverApi}" method="post" class="form-customer">
     <p>Package form; please fill in the form to purchase the package.</p>
 
-    <form>
     <h4>Personal Details</h4>
     <br>
 
@@ -269,47 +333,67 @@ function popPackDet(n){
     <br>
 
     <div class="form-group">
-    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <input type="text" name="Domain Name" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <input type="text" name="DomainName" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <select type="text" name="Website type" class="form-control" id="webtype"required/>
-      <option>Select a website option</option>
-      <option>General Information</option>
-      <option>E-commerce</option>
+    <select type="text" name="Websitetype" class="form-control" id="webtype"required/>
+      <option value="">Select a website option</option>
+      <option value="General">General Information</option>
+      <option value="E-commerce">E-commerce</option>
     </select>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <input type="text" name="Company Name" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <input type="text" name="CompanyName" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <input type="text" name="Company Regnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
+    <input type="text" name="CompanyRegnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
     <div class="validation"></div>
     </div>
 
-    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
-    </form>`;
+    <button type="button" class="form-control btn btn-primary" onclick="showPay()">Submit</button>
+    </form>
+    <div id="spinnersLoad" class="text-center">
+      <br>
+      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
+      <p class="text-success">Loading...</p>
+    </div>
 
+    <div class="payDiv">
+      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
+      <p>Our team will contact you soon</p>
+        <form action="https://www.payfast.co.za/eng/process" method="post">
+          <input type="hidden" name="merchant_id" value="15534190">
+          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
+          <input type="hidden" name="amount" value="5000.00">
+          <input type="hidden" name="item_name" value="Package-Business">
+          <input type="hidden" name="return_url" value="https://convee.co.za">
+          <input type="hidden" name="cancel_url" value="https://convee.co.za">
+          <input type="submit" class="form-control btn btn-success" value="Pay Now">
+          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
+        </form>
+    </div>`;
   }
   else if(btnId == "entpropack")
   {
     modTitle.innerHTML = "Buy Package: Pro Enterprise"
 
     modBody.innerHTML = `
-    <h3>R6 000.00</h3><br>
+    <h3>R8 500.00</h3><br>
+  
+    <form action="${serverApi}" method="post" class="form-customer">
     <p>Package form; please fill in the form to purchase the package.</p>
 
-    <form>
     <h4>Personal Details</h4>
     <br>
 
@@ -333,36 +417,58 @@ function popPackDet(n){
     <br>
 
     <div class="form-group">
-    <input type="text" name="Website Name" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <input type="text" name="Domain Name" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <input type="text" name="DomainName" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
     <select type="text" name="Website type" class="form-control" id="webtype"required/>
-      <option>Select a website option</option>
-      <option>General Information</option>
-      <option>E-commerce</option>
+      <option value="">Select a website option</option>
+      <option value="General">General Information</option>
+      <option value="E-commerce">E-commerce</option>
     </select>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <input type="text" name="Company Name" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
+    <input type="text" name="CompanyName" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
     <div class="validation"></div>
     </div>
 
     <div class="form-group">
-    <input type="text" name="Company Regnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
+    <input type="text" name="CompanyRegnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
     <div class="validation"></div>
     </div>
 
-    <button type="button" class="form-control btn btn-success"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp; Buy</button>
-    </form>`;
+    <button type="button" class="form-control btn btn-primary" onclick="showPay()">Submit</button>
+    </form>
+
+    <div id="spinnersLoad" class="text-center">
+      <br>
+      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
+      <p class="text-success">Loading...</p>
+    </div>
+
+    <div class="payDiv">
+      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
+      <p>Our team will contact you soon</p>
+        <form action="https://www.payfast.co.za/eng/process" method="post">
+          <input type="hidden" name="merchant_id" value="15534190">
+          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
+          <input type="hidden" name="amount" value="8500.00">
+          <input type="hidden" name="item_name" value="Package-Enterprise">
+          <input type="hidden" name="return_url" value="https://convee.co.za">
+          <input type="hidden" name="cancel_url" value="https://convee.co.za">
+          <input type="submit" class="form-control btn btn-success" value="Pay Now">
+          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
+        </form>
+    </div>`;
+
   }
 }
 
@@ -443,4 +549,26 @@ function popuRegLoginModal(a){
 
     modfoot.innerHTML = `<p>By clicking on Log in, you agree to the <a href="#">terms of service</a> on this website.</p>`;
   }
+}
+
+
+/*=============Payment function ===========*/
+function showPay(){
+  var payDiv = document.getElementsByClassName("payDiv");
+  var infoForm = document.getElementsByClassName("form-customer");
+  var loaderCircle = document.getElementById("spinnersLoad");
+
+  for(let i = 0; i < infoForm.length; i++){
+    infoForm[i].style.display = "none";
+  }
+
+  loaderCircle.style.display = "block";
+
+  setTimeout( () =>{
+    for(let x = 0; x < payDiv.length; x++){
+      payDiv[x].style.display = "block";
+    }  
+    loaderCircle.style.display = "none";
+  }, 5000);
+
 }
