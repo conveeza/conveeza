@@ -70,6 +70,27 @@ jQuery(document).ready(function ($) {
       $(".alert").alert('close')
     }, 5000)
   }
+  else if (windowResponseUrl.includes("?message=200%20OK%20Successful%20Log%20in")) {
+    var mymessage = window.location.href.toString().replace("https://convee.co.za?message=200%20OK%20Successful%20Log%20in&", "").replace("%20", " ");
+    
+    document.getElementById("alertsDiv").innerHTML = `
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Success!</strong> Successful Log in.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    `;
+    //email=zimb@gmail.comuser=5
+
+    // var email = mymessage;
+    // var userId = mymessage;
+    // localStorage.setItem("",)
+
+    setTimeout(() => {
+      $(".alert").alert('close')
+    }, 5000)
+  }
 
   // Mobile Navigation
   if ($('#nav-menu-container, #tk-nav-menu-container').length) {
@@ -298,3 +319,14 @@ btnRegister.addEventListener('click', () => {
 contactMsg.addEventListener('click', () => {
   contactMsg.innerHTML = `Please wait <img src="img/loader-1.gif" height="30px" class="mb-0">`;
 });
+
+var loginBtn = document.getElementById("btnLogin");
+
+loginBtn.addEventListener('click', () => {
+  loginBtn.innerHTML = `Please wait <img src="img/loader-1.gif" height="30px" class="mb-0">`;
+});
+
+//===========Login
+function Login(){
+  
+}
