@@ -209,13 +209,13 @@ var displayUser = document.getElementsByClassName("dispalyOnLogin");
 var LoggedInUser = localStorage.getItem("Username");
 var LoggedInUserDisplay = document.getElementById("userName");
 
-if (LoggedInUser != null || LoggedInUser != "") {
-  for (let i = 0; i > displayUser.length; i++) {
+if (LoggedInUser != null) {
+  for (let i = 0; i < displayUser.length; i++) {
     displayUser[i].style.display = "block";
   }
-  LoggedInUserDisplay.innerHTML = LoggedInUser;
+  LoggedInUserDisplay.innerHTML =" "+ LoggedInUser;
 }
-else {
+else if (LoggedInUser == null || LoggedInUser == "") {
   LoggedInUserDisplay.innerHTML = "Not logged in!";
 }
 
