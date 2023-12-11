@@ -81,18 +81,26 @@ jQuery(document).ready(function ($) {
           </button>
     </div>
     `;
-    console.log(mymessage);
-    //email=zimb@gmail.com user=5
+
     // Regular expression to match the value after "user="
-    var regex = /user=([^&]+)/;
-
+    var userregex = /user=([^&]+)/;
+    var emailRegex = /email=([^&]+)/;
+    var nameRegex = /name=([^&]+)/
     // Use exec() to get the matched value directly
-    var match = regex.exec(mymessage);
-    console.log(match[1]);
+    var emailMatch = emailRegex.exec(mymessage);
+    var userMatch = userregex.exec(mymessage);
+    var nameRegex = nameRegex.exec(mymessage);
 
-    // var email = mymessage.replace('&', ' ');
-    // var userId = mymessage;
-    //localStorage.setItem("Username",)
+    console.log(emailRegex[1]);
+    console.log(nameRegex[1]);
+
+    var Uemail = emailMatch[1];
+    var userId = userMatch[1];
+    var Uname = nameMatch[1];
+
+    // localStorage.setItem("Useremail",Uemail);
+    // localStorage.setItem("Username",Uname);
+    // localStorage.setItem("User",userId);
 
     setTimeout(() => {
       $(".alert").alert('close')
