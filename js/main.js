@@ -103,6 +103,7 @@ jQuery(document).ready(function ($) {
     localStorage.setItem("User",userId);
 
     setTimeout(() => {
+      window.location.href="https://convee.co.za"
       $(".alert").alert('close')
     }, 5000)
   }
