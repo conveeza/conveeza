@@ -81,14 +81,14 @@ jQuery(document).ready(function ($) {
           </button>
     </div>
     `;
-    
+    console.log(mymessage);
     //email=zimb@gmail.com user=5
     // Regular expression to match the value after "user="
     var regex = /user=([^&]+)/;
 
     // Use exec() to get the matched value directly
     var match = regex.exec(mymessage);
-    console.log(match);
+    console.log(match[1]);
 
     // var email = mymessage.replace('&', ' ');
     // var userId = mymessage;
