@@ -89,10 +89,10 @@ jQuery(document).ready(function ($) {
     // Use exec() to get the matched value directly
     var emailMatch = emailRegex.exec(mymessage);
     var userMatch = userregex.exec(mymessage);
-    var nameRegex = nameRegex.exec(mymessage);
+    var nameMatch = nameRegex.exec(mymessage);
 
-    console.log(emailRegex[1]);
-    console.log(nameRegex[1]);
+    console.log(emailMatch[1]);
+    console.log(nameMatch[1]);
 
     var Uemail = emailMatch[1];
     var userId = userMatch[1];
