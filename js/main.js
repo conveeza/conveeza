@@ -206,7 +206,7 @@ jQuery(document).ready(function ($) {
 });
 
 var displayUser = document.getElementsByClassName("dispalyOnLogin");
-var LoggedInUser = localStorage.getItem("userName");
+var LoggedInUser = localStorage.getItem("Username");
 var LoggedInUserDisplay = document.getElementById("userName");
 
 if (LoggedInUser != null || LoggedInUser != "") {
@@ -341,10 +341,3 @@ loginBtn.addEventListener('click', () => {
   loginBtn.innerHTML = `Please wait <img src="img/loader-1.gif" height="30px" class="mb-0">`;
 });
 
-//===========Login
-var usernameDisplay = document.getElementById("userName");
-var myUNameDisplay = localStorage.getItemetItem("Username");
-
-if(myUNameDisplay != null){
-  usernameDisplay.innerHTML = myUNameDisplay;
-}
