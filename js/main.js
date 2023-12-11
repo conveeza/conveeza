@@ -44,7 +44,7 @@ jQuery(document).ready(function( $ ) {
 
     document.getElementById("alertsDiv").innerHTML = `
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Success!</strong> ${mymessage}. Thank you, our team will contact you soon.
+          <strong>Success!</strong> ${mymessage}. Thank you, your registration was successful. You can login to buy our products or request a service.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -154,6 +154,19 @@ jQuery(document).ready(function( $ ) {
 
 });
 
+var displayUser = document.getElementsByClassName("dispalyOnLogin");
+var LoggedInUser = localStorage.getItem("userName");
+var LoggedInUserDisplay = document.getElementById("userName");
+
+if(LoggedInUser != null || LoggedInUser != ""){
+  for(let i= 0; i> displayUser.length; i++){
+    displayUser[i].style.display = "block";
+  }
+  LoggedInUserDisplay.innerHTML = LoggedInUser;
+}
+else{
+  LoggedInUserDisplay.innerHTML = "Not logged in!";
+}
 
 function popPackDet(n){
   var btnId = n;
@@ -165,411 +178,101 @@ function popPackDet(n){
   {
     modTitle.innerHTML = "Buy Package: Basic"
 
-    modBody.innerHTML = `
-    <h3>R1 500.00</h3><br>
-  
-    <form action="${serverApi}/AddCustomer" method="post" class="form-customer">
-      <p>Package form; please fill in the form to purchase the package.</p>
-      <h4>Personal Details</h4>
-      <br>
-
-      <div class="form-group">
-      <input type="text" name="fullName" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-      <div class="validation"></div>
-      </div>
-
-      <div class="form-group">
-      <input type="text" name="phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-      <div class="validation"></div>
-      </div>
-
-      <div class="form-group">
-      <input type="email" name="email" class="form-control" id="buyemail" placeholder="Email address" required/>
-      <div class="validation"></div>
-      </div>
-
-      <br>
-      <h4>Website Details</h4>
-      <br>
-
-      <div class="form-group">
-      <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-      <div class="validation"></div>
-      </div>
-
-      <div class="form-group">
-      <select type="text" name="Websitetype" class="form-control" id="webtype"required/>
-        <option value="">Select a website option</option>
-        <option value="Personal">Personal</option>
-        <option value="Business">Business</option>
-      </select>
-      <div class="validation"></div>
-      </div> 
-      <button type="submit" class="form-control btn btn-primary" onclick="">Submit</button>
-    </form>
-
-    <div id="spinnersLoad" class="text-center">
-      <br>
-      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
-      <p class="text-success">Loading...</p>
-    </div>
-
-    <div class="payDiv">
-      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
-      <p>Our team will contact you soon</p>
-        <form action="https://www.payfast.co.za/eng/process" method="post">
-          <input type="hidden" name="merchant_id" value="15534190">
-          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
-          <input type="hidden" name="amount" value="1500.00">
-          <input type="hidden" name="item_name" value="Package-Basic">
-          <input type="hidden" name="return_url" value="https://convee.co.za">
-          <input type="hidden" name="cancel_url" value="https://convee.co.za">
-          <input type="submit" class="form-control btn btn-success" value="Pay Now">
-          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
-        </form>
-    </div>`;
-
-  }
-  else if(btnId == "advbasic2.0pack")
-  {
-    modTitle.innerHTML = "Buy Package: Advanced Basic 2.0"
-
-    modBody.innerHTML = `
-    <h3>R3 000.00</h3><br>
-
-    <form action="${serverApi}" method="post" class="form-customer">
-    <p>Package form; please fill in the form to purchase the package.</p>
-
-    <h4>Personal Details</h4>
-    <br>
-
-    <div class="form-group">
-    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
-    <div class="validation"></div>
-    </div>
-
-    <br>
-    <h4>Website Details</h4>
-    <br>
-
-    <div class="form-group">
-    <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee.co.za" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <select type="text" name="Websitetype" class="form-control" id="webtype"required/>
-      <option value="">Select a website option</option>
-      <option value="Personal">Personal</option>
-      <option value="Business">Business</option>
-    </select>
-    <div class="validation"></div>
-    </div>
-
-    <button type="button" class="form-control btn btn-primary" onclick="showPay()">Submit</button>
-    </form>
-
-    <div id="spinnersLoad" class="text-center">
-      <br>
-      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
-      <p class="text-success">Loading...</p>
-    </div>
-
-    <div class="payDiv">
-      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
-      <p>Our team will contact you soon</p>
-        <form action="https://www.payfast.co.za/eng/process" method="post">
-          <input type="hidden" name="merchant_id" value="15534190">
-          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
-          <input type="hidden" name="amount" value="3000.00">
-          <input type="hidden" name="item_name" value="Package-Advanced Basic 2.0">
-          <input type="hidden" name="return_url" value="https://convee.co.za">
-          <input type="hidden" name="cancel_url" value="https://convee.co.za">
-          <input type="submit" class="form-control btn btn-success" value="Pay Now">
-          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
-        </form>
-    </div>`;
+    modBody.innerHTML = ``;
 
   }
   else if(btnId == "geneccompack")
   {
     modTitle.innerHTML = "Buy Package: Business"
 
-    modBody.innerHTML = `
-    <h3>R5 000.00</h3><br>
-   
-    <form action="${serverApi}" method="post" class="form-customer">
-    <p>Package form; please fill in the form to purchase the package.</p>
-
-    <h4>Personal Details</h4>
-    <br>
-
-    <div class="form-group">
-    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
-    <div class="validation"></div>
-    </div>
-
-    <br>
-    <h4>Website Details</h4>
-    <br>
-
-    <div class="form-group">
-    <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="DomainName" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <select type="text" name="Websitetype" class="form-control" id="webtype"required/>
-      <option value="">Select a website option</option>
-      <option value="General">General Information</option>
-      <option value="E-commerce">E-commerce</option>
-    </select>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="CompanyName" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="CompanyRegnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
-    <div class="validation"></div>
-    </div>
-
-    <button type="button" class="form-control btn btn-primary" onclick="showPay()">Submit</button>
-    </form>
-    <div id="spinnersLoad" class="text-center">
-      <br>
-      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
-      <p class="text-success">Loading...</p>
-    </div>
-
-    <div class="payDiv">
-      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
-      <p>Our team will contact you soon</p>
-        <form action="https://www.payfast.co.za/eng/process" method="post">
-          <input type="hidden" name="merchant_id" value="15534190">
-          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
-          <input type="hidden" name="amount" value="5000.00">
-          <input type="hidden" name="item_name" value="Package-Business">
-          <input type="hidden" name="return_url" value="https://convee.co.za">
-          <input type="hidden" name="cancel_url" value="https://convee.co.za">
-          <input type="submit" class="form-control btn btn-success" value="Pay Now">
-          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
-        </form>
-    </div>`;
+    modBody.innerHTML = ``;
   }
   else if(btnId == "entpropack")
   {
     modTitle.innerHTML = "Buy Package: Pro Enterprise"
 
-    modBody.innerHTML = `
-    <h3>R8 500.00</h3><br>
-  
-    <form action="${serverApi}" method="post" class="form-customer">
-    <p>Package form; please fill in the form to purchase the package.</p>
-
-    <h4>Personal Details</h4>
-    <br>
-
-    <div class="form-group">
-    <input type="text" name="Name" class="form-control" id="buyname" placeholder="Your Name & Surname" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="Phone" class="form-control" id="buyphone" placeholder="Phone number" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="email" name="Email" class="form-control" id="buyemail" placeholder="Email address" required/>
-    <div class="validation"></div>
-    </div>
-
-    <br>
-    <h4>Website Details</h4>
-    <br>
-
-    <div class="form-group">
-    <input type="text" name="WebsiteName" class="form-control" id="webname" placeholder="Website name e.g convee" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="DomainName" class="form-control" id="webndom" placeholder="Domain name e.g: .co.za / .com etc." data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <select type="text" name="Website type" class="form-control" id="webtype"required/>
-      <option value="">Select a website option</option>
-      <option value="General">General Information</option>
-      <option value="E-commerce">E-commerce</option>
-    </select>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="CompanyName" class="form-control" id="companyname" placeholder="Company Name" data-rule="minlen:3" data-msg="Please enter at least 3 chars" required/>
-    <div class="validation"></div>
-    </div>
-
-    <div class="form-group">
-    <input type="text" name="CompanyRegnum" class="form-control" id="companyregnum" placeholder="Company Registration number (optional)"/>
-    <div class="validation"></div>
-    </div>
-
-    <button type="button" class="form-control btn btn-primary" onclick="showPay()">Submit</button>
-    </form>
-
-    <div id="spinnersLoad" class="text-center">
-      <br>
-      <img src="img/Spinner.gif" alt="Loading..." width="20%"/>
-      <p class="text-success">Loading...</p>
-    </div>
-
-    <div class="payDiv">
-      <h5>Thank you for the request. Please make payment to get started with your project.</h5>
-      <p>Our team will contact you soon</p>
-        <form action="https://www.payfast.co.za/eng/process" method="post">
-          <input type="hidden" name="merchant_id" value="15534190">
-          <input type="hidden" name="merchant_key" value="d2mpu1zz1rnhd">
-          <input type="hidden" name="amount" value="8500.00">
-          <input type="hidden" name="item_name" value="Package-Enterprise">
-          <input type="hidden" name="return_url" value="https://convee.co.za">
-          <input type="hidden" name="cancel_url" value="https://convee.co.za">
-          <input type="submit" class="form-control btn btn-success" value="Pay Now">
-          <a class="text-center" href="https://payfast.io">Powered by Payfast</a>
-        </form>
-    </div>`;
+    modBody.innerHTML = ``;
 
   }
 }
 
-function popuRegLoginModal(a){
-  var btnlinkID = a;
-  var modTitle = document.getElementById("register&loginmodTitle");
-  var modbody= document.getElementById("register&loginmodbody");
-  var modfoot = document.getElementById("register&loginmodfoot");
+// function popuRegLoginModal(a){
+//   var btnlinkID = a;
+//   var modTitle = document.getElementById("register&loginmodTitle");
+//   var modbody= document.getElementById("register&loginmodbody");
+//   var modfoot = document.getElementById("register&loginmodfoot");
 
-  if(btnlinkID == "registerbtn" || btnlinkID == "registerLink"){
-    modTitle.innerHTML = "Register";
+//   if(btnlinkID == "registerbtn" || btnlinkID == "registerLink"){
+//     modTitle.innerHTML = "Register";
 
-    modbody.innerHTML = `
-    <br>
-    <center><img src="img/newuser.png" alt="newuser" width="20%"</center>
-    <br>
-    <br>
-    <form id="newuserFrm" class="form">
+//     modbody.innerHTML = `
+//     <br>
+//     <center><img src="img/newuser.png" alt="newuser" width="20%"</center>
+//     <br>
+//     <br>
+//     <form id="newuserFrm" class="form">
 
-    <div class="form-group">
-    <input type="text" name="Timestamp" id="tkTimestampsub" hidden>
-    <label>Select an sccount type</label>
-    <select type="text" name="Account type" class="form-control" id="acctype" required/>
-      <option>Individual</option>
-      <option>Organisation/Company</option>
-    </select>
-    <div class="validation"></div>
-    </div>
+//     <div class="form-group">
+//     <input type="text" name="Timestamp" id="tkTimestampsub" hidden>
+//     <label>Select an sccount type</label>
+//     <select type="text" name="Account type" class="form-control" id="acctype" required/>
+//       <option>Individual</option>
+//       <option>Organisation/Company</option>
+//     </select>
+//     <div class="validation"></div>
+//     </div>
 
-    <div class="form-group">
-    <label>Account Details</label>
-    <input type="text" name="Name" class="form-control" id="uname" placeholder="Name & Surname" required/>
-    <div class="validation"></div>
-    </div>
+//     <div class="form-group">
+//     <label>Account Details</label>
+//     <input type="text" name="Name" class="form-control" id="uname" placeholder="Name & Surname" required/>
+//     <div class="validation"></div>
+//     </div>
 
-    <div class="form-group">
-    <input type="text" name="Phone" class="form-control" id="uphone" placeholder="Phonenumber" required/>
-    <div class="validation"></div>
-    </div>
+//     <div class="form-group">
+//     <input type="text" name="Phone" class="form-control" id="uphone" placeholder="Phonenumber" required/>
+//     <div class="validation"></div>
+//     </div>
 
-    <div class="form-group">
-    <input type="email" name="Email" class="form-control" id="logEmail" placeholder="Email" required/>
-    <div class="validation"></div>
-    </div>
+//     <div class="form-group">
+//     <input type="email" name="Email" class="form-control" id="logEmail" placeholder="Email" required/>
+//     <div class="validation"></div>
+//     </div>
 
-    <div class="form-group">
-    <input type="password" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
-    <div class="validation"></div>
-    </div>
+//     <div class="form-group">
+//     <input type="password" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
+//     <div class="validation"></div>
+//     </div>
 
-    <button type="button" id="newuserfrmSub" class="form-control btn btn-success tk-medium" onclick="subfrmRegister()"><i class="fa fa-user-plus"></i>&nbsp;&nbsp; Register</button>
-    </form>`;
+//     <button type="button" id="newuserfrmSub" class="form-control btn btn-success tk-medium" onclick="subfrmRegister()"><i class="fa fa-user-plus"></i>&nbsp;&nbsp; Register</button>
+//     </form>`;
 
-    modfoot.innerHTML = `<p>By clicking on Register you agree to the <a href="#">terms of service</a> and <a href="#">privacy</a> on
-    this site and wish to submit your registration.</p>`;
-  }
-  else if(btnlinkID == "loginlink" || btnlinkID == "loginlink2"){
-    modTitle.innerHTML = "Login";
+//     modfoot.innerHTML = `<p>By clicking on Register you agree to the <a href="#">terms of service</a> and <a href="#">privacy</a> on
+//     this site and wish to submit your registration.</p>`;
+//   }
+//   else if(btnlinkID == "loginlink" || btnlinkID == "loginlink2"){
+//     modTitle.innerHTML = "Login";
 
-    modbody.innerHTML = `
-    <br>
-    <center><img src="img/lock.png" alt="lock" width="20%"</center>
-    <br>
-    <br>
-    <form id="loginFrm" class="form">
-    <div class="form-group">
-    <input type="email" name="Email" class="form-control" id="logEmail" placeholder="Email" required/>
-    <div class="validation"></div>
-    </div>
-    <div class="form-group">
-    <input type="password" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
-    <div class="validation"></div>
-    </div>
+//     modbody.innerHTML = `
+//     <br>
+//     <center><img src="img/lock.png" alt="lock" width="20%"</center>
+//     <br>
+//     <br>
+//     <form id="loginFrm" class="form">
+//     <div class="form-group">
+//     <input type="email" name="Email" class="form-control" id="logEmail" placeholder="Email" required/>
+//     <div class="validation"></div>
+//     </div>
+//     <div class="form-group">
+//     <input type="password" name="Password" class="form-control" id="logPassword" placeholder="Password" required/>
+//     <div class="validation"></div>
+//     </div>
 
-    <button type="button" id="loginfrmSub" class="form-control btn btn-success tk-medium"><i class="fa fa-sign-in"></i>&nbsp;&nbsp; Log In</button>
-    </form>
-    <center><a href="#!">Forgot Password</a></center>`;
+//     <button type="button" id="loginfrmSub" class="form-control btn btn-success tk-medium"><i class="fa fa-sign-in"></i>&nbsp;&nbsp; Log In</button>
+//     </form>
+//     <center><a href="#!">Forgot Password</a></center>`;
 
-    modfoot.innerHTML = `<p>By clicking on Log in, you agree to the <a href="#">terms of service</a> on this website.</p>`;
-  }
-}
+//     modfoot.innerHTML = `<p>By clicking on Log in, you agree to the <a href="#">terms of service</a> on this website.</p>`;
+//   }
+// }
 
 
-/*=============Payment function ===========*/
-function showPay(){
-  var payDiv = document.getElementsByClassName("payDiv");
-  var infoForm = document.getElementsByClassName("form-customer");
-  var loaderCircle = document.getElementById("spinnersLoad");
-
-  for(let i = 0; i < infoForm.length; i++){
-    infoForm[i].style.display = "none";
-  }
-
-  loaderCircle.style.display = "block";
-
-  setTimeout( () =>{
-    for(let x = 0; x < payDiv.length; x++){
-      payDiv[x].style.display = "block";
-    }  
-    loaderCircle.style.display = "none";
-  }, 5000);
-
-}

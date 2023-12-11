@@ -178,6 +178,9 @@ span {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
 }
 
+.dispalyOnLogin{
+  display: none;
+}
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -368,7 +371,7 @@ span {
   color: #555;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   outline: none;
   letter-spacing: 0;
   transition: 0.3s;
@@ -1591,10 +1594,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
 
 .tk-nav-menu ul ul {
   margin: 0;
-}
-
-.payDiv{
-  display: none;
 }
 
 #spinnersLoad{

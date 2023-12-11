@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Convee</title>
@@ -12,7 +13,9 @@
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i"
+    rel="stylesheet">
 
   <!-- Bootstrap css -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,25 +32,38 @@
 </head>
 
 <body>
-
   <header id="header" class="header header-hide">
     <br>
     <div class="container">
 
       <div id="logo" class="pull-left">
         <!--<a href="#body"><img src="imgc/IMG_E4292.JPG" width="20%" alt="IMG1"></a>-->
-        <h1><a href="#body" class="scrollto">Convee </a></h1>   
+        <h1><a href="#body" class="scrollto">Convee </a></h1>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero"><i class="fa fa-home"></i> Home</a></li>
+          <li class="menu-active border-left"><a href="#hero"><i class="fa fa-home"></i> Home</a></li>
           <li><a href="#about-us"><i class="fa fa-info-circle"></i> About</a></li>
           <li><a href="#features"><i class="fa fa-laptop"></i> Products</a></li>
           <li><a href="#screenshots"><i class="fa fa-paint-brush"></i> Design gallery</a></li>
           <li><a href="#newsletter"><i class="fa fa-hand-o-up"></i> subscribe</a></li>
           <li><a href="#pricing"><i class="fa fa-archive"></i> Pricing</a></li>
           <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
+          <li>
+            <div class="dropdown border-right">
+              <a href="#" class="dropdown-toggle" id="dropdownAccountMnu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user"></i> Account
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownAccountMnu">
+                <a href="#" data-toggle="modal" class="dropdown-item-sm" data-target="#LoginModal"><i class="fa fa-lock"></i> Login</a><br>
+                <a href="#" data-toggle="modal" class="dropdown-item-sm" data-target="#RegisterModal"><i class="fa fa-user-plus"></i> Register</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-user-circle dispalyOnLogin" id="userName"> </i></a>         
+          </li>
           <!-- <li><a href="tickets.html"><i class="fa fa-ticket"></i> Ticket Convee</a></li> -->
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -62,20 +78,24 @@
       <br>
 
       <div id="alertsDiv">
-        
+
       </div>
 
       <h1>Welcome to Convee</h1>
       <h2>"We are simply convenient"</h2>
       <img src="imgc/IMG_E4292.JPG" alt="img1" width="50%">
-      <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
-     </div>
+      <div class="flex-box">
+        <a href="#get-started" class="btn-get-started scrollto">Get Started</a> 
+        <button type="button" data-toggle="modal" data-target="#RegisterModal" class="btn-get-started ">Register</button>
+      </div>
+      
+    </div>
   </section><!-- #hero -->
 
   <!--==========================
     Get Started Section
   ============================-->
-   <section id="get-started" class="padd-section text-center wow fadeInUp">
+  <section id="get-started" class="padd-section text-center wow fadeInUp">
 
     <div class="container">
       <div class="section-title text-center">
@@ -94,7 +114,8 @@
 
             <img src="img/svg/web.svg" alt="img" class="img-fluid">
             <h4>Web development & design</h4>
-            <p>Do you need a simple website/webapp developed for you or your business? You have come to the right place. At convee, we get things done.</p>
+            <p>Do you need a simple website/webapp developed for you or your business? You have come to the right place.
+              At convee, we get things done.</p>
             <a href="#"><button type="button" class="btn btn-success">read more</button></a>
 
           </div>
@@ -105,7 +126,8 @@
 
             <img src="img/svg/website-design-icon.svg" alt="img" class="img-fluid">
             <h4>Website design</h4>
-            <p>Request a desing of your dream website. Anything you can imagine, our team can get it done. Just quality website or apllication designs.</p>
+            <p>Request a desing of your dream website. Anything you can imagine, our team can get it done. Just quality
+              website or apllication designs.</p>
             <a href="#"><button type="button" class="btn btn-success">read more</button></a>
 
           </div>
@@ -116,7 +138,8 @@
 
             <img src="img/svg/website-design.png" alt="img" class="img-fluid">
             <h4>Website/application Development</h4>
-            <p>Need to get a website/webapp developed for you or your business, to meet the needs of your customers? you have come to the right place. At convee, we get things done.</p>
+            <p>Need to get a website/webapp developed for you or your business, to meet the needs of your customers? you
+              have come to the right place. At convee, we get things done.</p>
             <a href="#"><button type="button" class="btn btn-success">read more</button></a>
 
           </div>
@@ -142,13 +165,17 @@
           <div class="about-content">
 
             <h2><span>Convee</span>Web Development & Design</h2>
-          
+
             <p>
-              Proudly South African company est.2020 specialising in the development and design of websites and web based applications.
-            The company brings in on board the best work force with highly skilled developers and designers who are specifically trained to 
-            work to meet and effeciently satisfy the needs of our customers and their businesses. You just have to sit back and relax and trust in our 
-            team to get it done for you. With a highly trained support and developers we are sure to bringing good quality. Our job is to 
-            satisfy you and we live to keep it simple, but quality, because "We are simply convenient".
+              Proudly South African company est.2020 specialising in the development and design of websites and web
+              based applications.
+              The company brings in on board the best work force with highly skilled developers and designers who are
+              specifically trained to
+              work to meet and effeciently satisfy the needs of our customers and their businesses. You just have to sit
+              back and relax and trust in our
+              team to get it done for you. With a highly trained support and developers we are sure to bringing good
+              quality. Our job is to
+              satisfy you and we live to keep it simple, but quality, because "We are simply convenient".
             </p>
 
             <ul class="list-unstyled">
@@ -161,7 +188,7 @@
               <li><i class="fa fa-angle-right"></i>Advanced programming</li>
               <li>
                 <i class="fa fa-angle-right"></i>Languages used:
-               <br> &nbsp; -  C#, Html, Css, Javascript, Jquery, Php, Razor and more.
+                <br> &nbsp; - C#, Html, Css, Javascript, Jquery, Php, Razor and more.
               </li>
               <li><i class="fa fa-angle-right"></i>.Net Frameworks</li>
               <li><i class="fa fa-angle-right"></i>.Net Framework (MVc)</li>
@@ -190,7 +217,7 @@
 
     <div class="container">
       <div class="row">
-      
+
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
             <img src="img/svg/application.svg" alt="img" class="img-fluid">
@@ -220,7 +247,8 @@
           <div class="feature-block">
             <img src="img/svg/netlogo.png" alt="img" class="img-fluid">
             <h4>Asp.Net Application</h4>
-            <p>Need a .net application, you've come to the right place. we will build, deploy and manage it on your behalf.</p>
+            <p>Need a .net application, you've come to the right place. we will build, deploy and manage it on your
+              behalf.</p>
           </div>
         </div>
 
@@ -242,13 +270,22 @@
 
         <div class="col-md-6 col-lg-3">
           <div class="feature-block">
+            <img src="img/svg/angular-icon.svg" alt="img" class="img-fluid">
+            <h4>Angular Web Apps</h4>
+            <p>"Angular web frontend delivers dynamic, modular design, ensuring a responsive,
+              scalable experience with powerful features for a robust and seamless user interface.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
             <img src="img/svg/ticket.svg" alt="img" class="img-fluid">
             <h4>Ticket Convee</h4>
             <p>Coming Soon. Advertise and sell tickets for any event with convee.</p>
           </div>
         </div>
 
-        
+
 
       </div>
     </div>
@@ -317,7 +354,7 @@
           </div>
         </div>
 
-       <div class="col-md-6 col-md-4 col-lg-3">
+        <div class="col-md-6 col-md-4 col-lg-3">
           <div class="team-block bottom">
             <a href="designs.html#riverside"><img src="img/Riverside_OG.png" class="img-responsive" alt="img"></a>
             <div class="team-content">
@@ -364,7 +401,8 @@
 
         <div class="col-md-6 col-md-4 col-lg-3">
           <div class="team-block bottom">
-            <a href="https://mvuyelwafitness.co.za" target="_blank"><img src="img/MV.png" class="img-responsive" alt="img"></a>
+            <a href="https://mvuyelwafitness.co.za" target="_blank"><img src="img/MV.png" class="img-responsive"
+                alt="img"></a>
             <div class="team-content">
               <ul class="list-unstyled">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -382,7 +420,7 @@
   </section>
 
 
- 
+
   <!--==========================
     Pricing Table Section
   ============================-->
@@ -409,10 +447,10 @@
                 <li><b>Basic</b><br> website</li>
                 <li>Support within <b>72hrs</b></li>
                 <li>No SSL<i class="fa fa-lock"></i></li>
-                <li>Static website 
+                <li>Static website
                   <i class="fa fa-question-circle" id="quest">
                     <span class="tooltiptext">
-                      A static web page is a web page that is 
+                      A static web page is a web page that is
                       delivered to the user's web browser exactly as stored,
                       in contrast to dynamic web pages which are generated
                       by a web application. Examples include: <br>
@@ -429,7 +467,8 @@
                 <li>.</li>
               </ul>
               <div class="table_btn" id="basic1">
-                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal" id="basicpack"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal"
+                  id="basicpack"><i class="fa fa-shopping-cart"></i> Get Package</a>
               </div>
             </div>
           </div>
@@ -449,7 +488,8 @@
                 <li>.</li>
               </ul>
               <div class="table_btn" id="advbasic">
-                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal" id="advbasic2.0pack"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal"
+                  id="advbasic2.0pack"><i class="fa fa-shopping-cart"></i> Get Package</a>
               </div>
             </div>
           </div>
@@ -469,7 +509,8 @@
                 <li>.</li>
               </ul>
               <div class="table_btn" id="geccomerce">
-                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal" id="geneccompack"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal"
+                  id="geneccompack"><i class="fa fa-shopping-cart"></i> Get Package</a>
               </div>
             </div>
           </div>
@@ -489,7 +530,8 @@
                 <li>Enterprise management</li>
               </ul>
               <div class="table_btn" id="entpack">
-                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal" id="entpropack"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal"
+                  id="entpropack"><i class="fa fa-shopping-cart"></i> Get Package</a>
               </div>
             </div>
           </div>
@@ -514,31 +556,32 @@
               <button type="submit" class="btn btn-default"><i class="fa fa-location-arrow"></i>Subscribe</button>
 
             </form>
-            <h4 class="text-center msg-notification" id="subnotification2" >You have subscribes to our newsletter successfully!</h4>
+            <h4 class="text-center msg-notification" id="subnotification2">You have subscribes to our newsletter
+              successfully!</h4>
 
           </div>
         </div>
 
-          <ul class="list-unstyled">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-          </ul>
+        <ul class="list-unstyled">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+        </ul>
 
 
       </div>
 
- 
+
     </div>
   </section>
-<br><br>
+  <br><br>
 
 
   <!--==========================
     Contact Section
   ============================-->
   <section id="contact" class="padd-section wow fadeInUp">
-    
+
     <div class="container">
       <div class="section-title text-center">
         <h2>Contact</h2>
@@ -548,7 +591,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-4">
-          <img src="img/support.png" width="95%"alt="int5"><br>
+          <img src="img/support.png" width="95%" alt="int5"><br>
         </div>
 
         <div class="col-lg-4 col-md-4">
@@ -567,7 +610,7 @@
 
             <div>
               <i class="fa fa-phone"></i>
-              <p>+27 63 536 6403  <br> +27 78 695 4409</p>
+              <p>+27 63 536 6403 <br> +27 78 695 4409</p>
             </div>
           </div>
 
@@ -584,19 +627,22 @@
 
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form id="contactfrm" class="contactForm">
+            <form action="" method="post" id="contactfrm" class="contactForm">
               <input type="text" name="Timestamp" id="Timestamp" hidden>
               <div class="form-group">
-                <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 3 chars" required/>
+                <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name"
+                  data-rule="minlen:4" data-msg="Please enter at least 3 chars" required />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required/>
+                <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email"
+                  data-rule="email" data-msg="Please enter a valid email" required />
                 <div class="validation"></div>
               </div>
 
               <div class="form-group">
-                <select type="text" class="form-control" name="Subject" id="subject" data-msg="Please enter at least 8 chars of subject" required> 
+                <select type="text" class="form-control" name="Subject" id="subject"
+                  data-msg="Please enter at least 8 chars of subject" required>
                   <option value="Select a subject">Select a subject</option>
                   <option value="General">General</option>
                   <option value="Package pricing">Website package pricing</option>
@@ -608,14 +654,15 @@
               </div>
 
               <div class="form-group">
-                <textarea class="form-control" name="Message" rows="5" id="messg" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="Message" rows="5" id="messg" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validation"></div>
               </div>
               <div class="text-center">
                 <button type="submit">Send Message <i class="fa fa-paper-plane"></i></button>
               </div>
               <br>
-              <h4 class="text-center msg-notification" id="subnotification" >Form Submitted successfully!</h4>
+              <h4 class="text-center msg-notification" id="subnotification">Form Submitted successfully!</h4>
             </form>
           </div>
         </div>
@@ -648,7 +695,7 @@
 
 
             <ul class="list-unstyled">
-              
+
             </ul>
 
           </div>
@@ -710,30 +757,31 @@
 
   </footer>
 
-<!--Information modal-->
-<!-- Modal -->
-<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="infoModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="infoModalbody">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+  <!--Information modal-->
+  <!-- Modal -->
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="infoModalbody">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--buynow modal-->
-<!-- Modal -->
-  <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!--buynow modal-->
+  <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -743,18 +791,98 @@
           </button>
         </div>
         <div class="modal-body" id="buyModalbody">
-          
+
         </div>
         <div class="modal-footer">
           <p>
             By clicking Pay Now you agree to the <a href="#">terms of service</a> on
             this site and wish to confirm buying this package.
-            </P>
+          </P>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="loginModalTitle">Register</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="loginModalbody">
+          <form action="https://riversideHoldings.co.za/Convee/AddCustomer" method="post">
+            <div class="form-group">
+              <input type="text" name="fullName" class="form-control" id="FullName" placeholder="Full Names & Surname..."
+                data-rule="minlen:3" data-msg="Please enter username" required />
+              <div class="validation"></div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="email" class="form-control" id="Email" placeholder="Email..."
+                data-rule="minlen:3" data-msg="Please enter username" required />
+              <div class="validation"></div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="phone" class="form-control" id="Phone" placeholder="Phonenumber..."
+                data-rule="minlen:3" data-msg="Please enter username" required />
+              <div class="validation"></div>
+            </div>
+
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" id="Password" placeholder="Password..."
+                data-rule="minlen:3" data-msg="Please enter password" required />
+              <div class="validation"></div>
+            </div>
+            <button type="submit" class="form-control btn btn-primary">Register</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>
+            By clicking Register you agree to the <a href="#">terms of service</a> on
+            this site and wish to confirm buying this package.
+          </P>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Login Modal -->
+  <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="loginModalTitle">Log in</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="loginModalbody">
+          <div class="form-group">
+            <input type="text" name="Username" class="form-control" id="username" placeholder="Username / Email..."
+              data-rule="minlen:3" data-msg="Please enter username" required />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <input type="password" name="Password" class="form-control" id="password" placeholder="Password..."
+              data-rule="minlen:3" data-msg="Please enter password" required />
+            <div class="validation"></div>
+          </div>
+          <button type="button" class="form-control btn btn-primary" onclick="Login()">Log in</button>
+          <a href="">Register</a>
+        </div>
+        <div class="modal-footer">
+          <p>
+            By clicking Log in you agree to the <a href="#">terms of service</a> on
+            this site and wish to confirm buying this package.
+          </P>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
@@ -768,7 +896,7 @@
   <script src="lib/modal-video/js/modal-video.js"></script>
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/wow/wow.min.js"></script>
-  
+
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
@@ -776,4 +904,5 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
+
 </html>
