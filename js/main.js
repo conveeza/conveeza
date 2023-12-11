@@ -91,9 +91,6 @@ jQuery(document).ready(function ($) {
     var userMatch = userregex.exec(mymessage);
     var nameMatch = nameRegex.exec(mymessage);
 
-    console.log(emailMatch[1]);
-    console.log(nameMatch[1]);
-
     var Uemail = emailMatch[1];
     var userId = userMatch[1];
     var Uname = nameMatch[1].replace("%20", " ");
@@ -103,8 +100,8 @@ jQuery(document).ready(function ($) {
     localStorage.setItem("User",userId);
 
     setTimeout(() => {
-      window.location.href="https://convee.co.za"
-      $(".alert").alert('close')
+      $(".alert").alert('close');
+      window.location.href="https://convee.co.za";
     }, 5000)
   }
 
