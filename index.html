@@ -57,7 +57,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownAccountMnu">
                 <a href="#" data-toggle="modal" class="dropdown-item-sm" data-target="#LoginModal"><i class="fa fa-lock"></i> Login</a><br>
-                <a href="#" data-toggle="modal" class="dropdown-item-sm" data-target="#RegisterModal"><i class="fa fa-user-plus"></i> Register</a>
+                <a href="#" data-toggle="modal" class="dropdown-item-sm" data-target="#RegisterModal"><i class="fa fa-user-plus"></i> Register</a> 
               </div>
             </div>
           </li>
@@ -88,7 +88,6 @@
         <a href="#get-started" class="btn-get-started scrollto">Get Started</a> 
         <button type="button" data-toggle="modal" data-target="#RegisterModal" class="btn-get-started ">Register</button>
       </div>
-      
     </div>
   </section><!-- #hero -->
 
@@ -627,21 +626,26 @@
 
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="" method="post" id="contactfrm" class="contactForm">
-              <input type="text" name="Timestamp" id="Timestamp" hidden>
+            <form action="https://riversideHoldings.co.za/Convee/AddContactMessage" method="post" id="contactfrm" class="contactForm">     
               <div class="form-group">
-                <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name"
+                <input type="text" name="fullName" class="form-control" id="name" placeholder="Your Name"
                   data-rule="minlen:4" data-msg="Please enter at least 3 chars" required />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email"
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
                   data-rule="email" data-msg="Please enter a valid email" required />
                 <div class="validation"></div>
               </div>
 
               <div class="form-group">
-                <select type="text" class="form-control" name="Subject" id="subject"
+                <input type="text" class="form-control" name="phone" id="Phone2" placeholder="Your Phonenumber"
+                  data-rule="phone" data-msg="Please enter a valid Phonenumber" required />
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-group">
+                <select type="text" class="form-control" name="subject" id="Subject"
                   data-msg="Please enter at least 8 chars of subject" required>
                   <option value="Select a subject">Select a subject</option>
                   <option value="General">General</option>
@@ -654,12 +658,12 @@
               </div>
 
               <div class="form-group">
-                <textarea class="form-control" name="Message" rows="5" id="messg" data-rule="required"
+                <textarea class="form-control" name="message" rows="5" id="messg" data-rule="required"
                   data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validation"></div>
               </div>
               <div class="text-center">
-                <button type="submit">Send Message <i class="fa fa-paper-plane"></i></button>
+                <button type="submit" id="cntcMsgBtn">Send Message <i class="fa fa-paper-plane"></i></button>
               </div>
               <br>
               <h4 class="text-center msg-notification" id="subnotification">Form Submitted successfully!</h4>
@@ -837,7 +841,7 @@
                 data-rule="minlen:3" data-msg="Please enter password" required />
               <div class="validation"></div>
             </div>
-            <button type="submit" class="form-control btn btn-primary">Register</button>
+            <button type="submit" class="form-control btn btn-primary" id="btnReg">Register</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -872,7 +876,7 @@
             <div class="validation"></div>
           </div>
           <button type="button" class="form-control btn btn-primary" onclick="Login()">Log in</button>
-          <a href="">Register</a>
+          <a href="" data-dismiss="modal" data-toggle="modal" data-target="#RegisterModal">Register</a>
         </div>
         <div class="modal-footer">
           <p>
