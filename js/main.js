@@ -71,8 +71,8 @@ jQuery(document).ready(function ($) {
     }, 5000)
   }
   else if (windowResponseUrl.includes("?message=200%20OK%20Successful%20Log%20in")) {
-    var mymessage = window.location.href.toString().replace("https://convee.co.za?message=200%20OK%20Successful%20Log%20in&", "").replace("%20", " ");
-    
+    var mymessage = window.location.href.toString().replace("https://convee.co.za?message=200%20OK%20Successful%20Log%20in&", "");
+
     document.getElementById("alertsDiv").innerHTML = `
     <div class="alert alert-success alert-dismissible fade show" role="alert">
           <strong>Success!</strong> Successful Log in.
@@ -81,11 +81,18 @@ jQuery(document).ready(function ($) {
           </button>
     </div>
     `;
-    //email=zimb@gmail.comuser=5
+    
+    //email=zimb@gmail.com user=5
+    // Regular expression to match the value after "user="
+    var regex = /user=([^&]+)/;
 
-    // var email = mymessage;
+    // Use exec() to get the matched value directly
+    var match = regex.exec(mymessage);
+    console.log(match);
+
+    // var email = mymessage.replace('&', ' ');
     // var userId = mymessage;
-    // localStorage.setItem("",)
+    //localStorage.setItem("Username",)
 
     setTimeout(() => {
       $(".alert").alert('close')
@@ -327,6 +334,6 @@ loginBtn.addEventListener('click', () => {
 });
 
 //===========Login
-function Login(){
-  
+function Login() {
+
 }
