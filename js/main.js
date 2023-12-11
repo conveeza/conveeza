@@ -214,9 +214,11 @@ if (LoggedInUser != null) {
     displayUser[i].style.display = "block";
   }
   LoggedInUserDisplay.innerHTML =" "+ LoggedInUser;
+  document.getElementById("dontdispalyOnLogin").style.display = "none";
 }
 else if (LoggedInUser == null || LoggedInUser == "") {
   LoggedInUserDisplay.innerHTML = "Not logged in!";
+  document.getElementById("dontdispalyOnLogin").style.display = "block";
 }
 
 function popPackDet(n) {

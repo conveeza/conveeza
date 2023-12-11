@@ -51,18 +51,25 @@
           <li><a href="#pricing"><i class="fa fa-archive"></i> Pricing</a></li>
           <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
           <li>
-            <div class="dropdown border-right">
+            <div class="dropdown border-right" id="dontdispalyOnLogin">
               <a href="#" class="dropdown-toggle" id="dropdownAccountMnu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user"></i> Account
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownAccountMnu">
-                <a href="#" data-toggle="modal" class="dropdown-item-sm" data-target="#LoginModal"><i class="fa fa-lock"></i> Login</a><br>
-                <a href="#" data-toggle="modal" class="dropdown-item-sm" data-target="#RegisterModal"><i class="fa fa-user-plus"></i> Register</a> 
+                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#LoginModal"><i class="fa fa-lock"></i> Login</a><br>
+                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#RegisterModal"><i class="fa fa-user-plus"></i> Register</a> 
               </div>
             </div>
           </li>
-          <li>
-            <a href=""><i class="fa fa-user-circle dispalyOnLogin" id="userName"> </i></a>         
+          <li>   
+            <div class="dropdown dispalyOnLogin">
+              <a href="#" class="dropdown-toggle" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user-circle" id="userName"> </i>
+              </a>  
+              <div class="dropdown-menu" aria-labelledby="dropdownUser">
+                <a href="index.html" class="dropdown-item-sm text-dark" onclick="localStorage.clear()"><i class="fa fa-lock"></i> Log out</a><br>   
+              </div>
+            </div>      
           </li>
           <!-- <li><a href="tickets.html"><i class="fa fa-ticket"></i> Ticket Convee</a></li> -->
         </ul>
@@ -865,18 +872,20 @@
           </button>
         </div>
         <div class="modal-body" id="loginModalbody">
-          <div class="form-group">
-            <input type="text" name="Username" class="form-control" id="username" placeholder="Username / Email..."
-              data-rule="minlen:3" data-msg="Please enter username" required />
-            <div class="validation"></div>
-          </div>
-          <div class="form-group">
-            <input type="password" name="Password" class="form-control" id="password" placeholder="Password..."
-              data-rule="minlen:3" data-msg="Please enter password" required />
-            <div class="validation"></div>
-          </div>
-          <button type="button" class="form-control btn btn-primary" onclick="Login()">Log in</button>
-          <a href="" data-dismiss="modal" data-toggle="modal" data-target="#RegisterModal">Register</a>
+          <form action="https://riversideholdings.co.za/Convee/UserLogin" method="post">
+            <div class="form-group">
+              <input type="text" name="username" class="form-control" id="Username" placeholder="Username / Email..."
+                data-rule="minlen:3" data-msg="Please enter username" required />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" id="PasswordLogin" placeholder="Password..."
+                data-rule="minlen:3" data-msg="Please enter password" required />
+              <div class="validation"></div>
+            </div>
+            <button type="submit" class="form-control btn btn-primary" id="btnLogin">Log in</button>
+            <a href="" data-dismiss="modal" data-toggle="modal" data-target="#RegisterModal">Register</a>
+          </form>   
         </div>
         <div class="modal-footer">
           <p>
