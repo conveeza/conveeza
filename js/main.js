@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
   //This function shows alerts after talking to server
   var windowResponseUrl = window.location.href;
 
-  if (windowResponseUrl.includes("?message=200%20OK%20success%20")) {
+  if (windowResponseUrl.includes("?message=200%20OK%20success%20Customer%20Registered")) {
     var mymessage = window.location.href.toString().replace("https://convee.co.za/?message=200%20OK%20success%20", "").replace("%20", " ");
 
     document.getElementById("alertsDiv").innerHTML = `
