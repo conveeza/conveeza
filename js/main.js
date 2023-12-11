@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
     // Regular expression to match the value after "user="
     var userregex = /user=([^&]+)/;
     var emailRegex = /email=([^&]+)/;
-    var nameRegex = /name=([^&]+)/
+    var nameRegex = /name=([^&]+)/;
     // Use exec() to get the matched value directly
     var emailMatch = emailRegex.exec(mymessage);
     var userMatch = userregex.exec(mymessage);
@@ -96,7 +96,7 @@ jQuery(document).ready(function ($) {
 
     var Uemail = emailMatch[1];
     var userId = userMatch[1];
-    var Uname = nameMatch[1];
+    var Uname = nameMatch[1].replace("%20", " ");
 
     // localStorage.setItem("Useremail",Uemail);
     // localStorage.setItem("Username",Uname);
