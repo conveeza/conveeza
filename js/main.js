@@ -98,9 +98,9 @@ jQuery(document).ready(function ($) {
     var userId = userMatch[1];
     var Uname = nameMatch[1].replace("%20", " ");
 
-    // localStorage.setItem("Useremail",Uemail);
-    // localStorage.setItem("Username",Uname);
-    // localStorage.setItem("User",userId);
+    localStorage.setItem("Useremail",Uemail);
+    localStorage.setItem("Username",Uname);
+    localStorage.setItem("User",userId);
 
     setTimeout(() => {
       $(".alert").alert('close')
@@ -342,6 +342,9 @@ loginBtn.addEventListener('click', () => {
 });
 
 //===========Login
-function Login() {
+var usernameDisplay = document.getElementById("userName");
+var myUNameDisplay = localStorage.getItemetItem("Username");
 
+if(myUNameDisplay != null){
+  usernameDisplay.innerHTML = myUNameDisplay;
 }
