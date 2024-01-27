@@ -52,25 +52,35 @@
           <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
           <li>
             <div class="dropdown border-right" id="dontdispalyOnLogin">
-              <a href="#" class="dropdown-toggle" id="dropdownAccountMnu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="#" class="dropdown-toggle" id="dropdownAccountMnu" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <i class="fa fa-user"></i> Account
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownAccountMnu">
-                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#LoginModal"><i class="fa fa-lock"></i> Login</a><br>
-                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#RegisterModal"><i class="fa fa-user-plus"></i> Register</a> 
+                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#LoginModal"><i
+                    class="fa fa-lock"></i> Login</a><br>
+                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#RegisterModal"><i
+                    class="fa fa-user-plus"></i> Register</a>
               </div>
             </div>
           </li>
-          <li>   
+          <li>
             <div class="dropdown dispalyOnLogin">
-              <a href="#" class="dropdown-toggle" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="#" class="dropdown-toggle" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <i class="fa fa-user-circle" id="userName"> </i>
-              </a>  
+              </a>
               <div class="dropdown-menu" aria-labelledby="dropdownUser">
-                <a href="#" class="dropdown-item-sm text-dark" onclick=""><i class="fa fa fa-files-o"></i> Projects</a><br>
-                <a href="index.html" class="dropdown-item-sm text-dark" onclick="localStorage.clear()"><i class="fa fa-lock"></i> Log out</a><br>   
+                <a href="projects.html" class="dropdown-item-sm text-dark" name="projectBtn" onclick="">
+                  <i class="fa fa fa-files-o"></i> Projects
+                </a>
+                <br>
+                <a href="index.html" class="dropdown-item-sm text-dark" onclick="localStorage.clear()">
+                  <i class="fa fa-lock"></i> Log out
+                </a>
+                <br>
               </div>
-            </div>      
+            </div>
           </li>
           <!-- <li><a href="tickets.html"><i class="fa fa-ticket"></i> Ticket Convee</a></li> -->
         </ul>
@@ -93,8 +103,9 @@
       <h2>"We are simply convenient"</h2>
       <img src="imgc/IMG_E4292.JPG" alt="img1" width="50%">
       <div class="flex-box">
-        <a href="#get-started" class="btn-get-started scrollto">Get Started</a> 
-        <button type="button" data-toggle="modal" data-target="#RegisterModal" class="btn-get-started ">Register</button>
+        <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+        <button type="button" data-toggle="modal" data-target="#RegisterModal"
+          class="btn-get-started ">Register</button>
       </div>
     </div>
   </section><!-- #hero -->
@@ -186,21 +197,20 @@
             </p>
 
             <ul class="list-unstyled">
-              <li><i class="fa fa-angle-right"></i>Creative Design</li>
               <li><i class="fa fa-angle-right"></i>Website Design </li>
               <li><i class="fa fa-angle-right"></i>Application Design</li>
               <li><i class="fa fa-angle-right"></i>Web Development</li>
               <li><i class="fa fa-angle-right"></i>Web-app Development</li>
-              <li><i class="fa fa-angle-right"></i>Api Technology</li>
-              <li><i class="fa fa-angle-right"></i>Advanced programming</li>
+              <li><i class="fa fa-angle-right"></i>Rest APIs</li>
+              <li><i class="fa fa-angle-right"></i>ionic Framework</li>
+              <li><i class="fa fa-angle-right"></i>Angular</li>
               <li>
                 <i class="fa fa-angle-right"></i>Languages used:
-                <br> &nbsp; - C#, Html, Css, Javascript, Jquery, Php, Razor and more.
+                <br> &nbsp; - C#, Html, Css, Javascript, Jquery, Php, Razor, Typescript, React, Json.
               </li>
               <li><i class="fa fa-angle-right"></i>.Net Frameworks</li>
               <li><i class="fa fa-angle-right"></i>.Net Framework (MVc)</li>
             </ul>
-
           </div>
         </div>
 
@@ -634,7 +644,8 @@
 
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="https://riversideHoldings.co.za/Convee/AddContactMessage" method="post" id="contactfrm" class="contactForm">     
+            <form action="https://riversideHoldings.co.za/Convee/AddContactMessage" method="post" id="contactfrm"
+              class="contactForm">
               <div class="form-group">
                 <input type="text" name="fullName" class="form-control" id="name" placeholder="Your Name"
                   data-rule="minlen:4" data-msg="Please enter at least 3 chars" required />
@@ -735,7 +746,7 @@
             <ul class="list-unstyled">
               <li><a href="#team">Projects</a></li>
               <li><a href="#" data-toggle="modal" data-target="#infoModal" id="designhelp">Desing help</a></li>
-              <li><a href="#screenshots">Web Desings</a></li>
+              <li><a href="#designs.html">Web Desings</a></li>
             </ul>
 
           </div>
@@ -804,6 +815,7 @@
         </div>
         <div class="modal-body" id="buyModalbody">
 
+
         </div>
         <div class="modal-footer">
           <p>
@@ -815,7 +827,9 @@
     </div>
   </div>
 
-  <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle" aria-hidden="true">
+  <!--Register Modal-->
+  <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -827,8 +841,8 @@
         <div class="modal-body" id="loginModalbody">
           <form action="https://riversideHoldings.co.za/Convee/AddCustomer" method="post">
             <div class="form-group">
-              <input type="text" name="fullName" class="form-control" id="FullName" placeholder="Full Names & Surname..."
-                data-rule="minlen:3" data-msg="Please enter username" required />
+              <input type="text" name="fullName" class="form-control" id="FullName"
+                placeholder="Full Names & Surname..." data-rule="minlen:3" data-msg="Please enter username" required />
               <div class="validation"></div>
             </div>
 
@@ -861,6 +875,7 @@
       </div>
     </div>
   </div>
+
   <!--Login Modal -->
   <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle"
     aria-hidden="true">
@@ -886,7 +901,7 @@
             </div>
             <button type="submit" class="form-control btn btn-primary" id="btnLogin">Log in</button>
             <a href="" data-dismiss="modal" data-toggle="modal" data-target="#RegisterModal">Register</a>
-          </form>   
+          </form>
         </div>
         <div class="modal-footer">
           <p>
