@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-
+  window.location.href="/404.html";
   $(window).scroll(function () {
     var height = $(window).height();
     var scroll = $(window).scrollTop();
