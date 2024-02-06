@@ -1,6 +1,3 @@
-if(window.location.href != "/404.html"){
-  window.location.href = "/404.html";
-};
 jQuery(document).ready(function ($) {
   
   $(window).scroll(function () {
