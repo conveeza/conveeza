@@ -7,9 +7,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-  <!--script type="text/javascript">
-    window.location.href='/404'
-  </script-->
+
   <!-- Favicons -->
   <link href="img/webtabicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -31,16 +29,17 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/99312025d1.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="">
+<body>
   <header id="header" class="header header-hide">
     <br>
     <div class="container">
 
       <div id="logo" class="pull-left">
         <!--<a href="#body"><img src="imgc/IMG_E4292.JPG" width="20%" alt="IMG1"></a>-->
-        <h1><a href="#body" class="scrollto">Convee </a></h1>
+        <a href="https://convee.co.za" class="scrollto"><img src="img/Convee-logo-whtbg.png" alt="Convee" width="150px"></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -58,33 +57,21 @@
                 aria-expanded="false">
                 <i class="fa fa-user"></i> Account
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownAccountMnu">
-                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#LoginModal"><i
-                    class="fa fa-lock"></i> Login</a><br>
-                <a href="#" data-toggle="modal" class="dropdown-item-sm text-dark" data-target="#RegisterModal"><i
-                    class="fa fa-user-plus"></i> Register</a>
+              <div class="dropdown-menu" name="customer" aria-labelledby="dropdownAccountMnu">
+                <a href="/login.html" class="dropdown-item-sm text-dark">
+                  <i class="fa-solid fa-user-lock"></i>
+                  Customer Login
+                </a>
+                <br>
+                <a href="/login.html" name="employee" class="dropdown-item-sm text-dark">
+                  <i class="fa-solid fa-users-gear"></i>
+                  Employee Login
+                </a>
+                <br>
+                <a href="/register.html" class="dropdown-item-sm text-dark"><i class="fa fa-user-plus"></i> Register</a>
               </div>
             </div>
           </li>
-          <li>
-            <div class="dropdown dispalyOnLogin">
-              <a href="#" class="dropdown-toggle" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <i class="fa fa-user-circle" id="userName"> </i>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownUser">
-                <a href="projects.html" class="dropdown-item-sm text-dark" name="projectBtn" onclick="">
-                  <i class="fa fa fa-files-o"></i> Projects
-                </a>
-                <br>
-                <a href="index.html" class="dropdown-item-sm text-dark" onclick="localStorage.clear()">
-                  <i class="fa fa-lock"></i> Log out
-                </a>
-                <br>
-              </div>
-            </div>
-          </li>
-          <!-- <li><a href="tickets.html"><i class="fa fa-ticket"></i> Ticket Convee</a></li> -->
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -106,8 +93,8 @@
       <img src="imgc/IMG_E4292.JPG" alt="img1" width="50%">
       <div class="flex-box">
         <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
-        <button type="button" data-toggle="modal" data-target="#RegisterModal"
-          class="btn-get-started ">Register</button>
+        <a type="button" href="/register.html" class="btn-get-started ">Register
+        </a>
       </div>
     </div>
   </section><!-- #hero -->
@@ -871,43 +858,6 @@
         <div class="modal-footer">
           <p>
             By clicking Register you agree to the <a href="#">terms of service</a> on
-            this site and wish to confirm buying this package.
-          </P>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Login Modal -->
-  <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="loginModalTitle">Log in</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="loginModalbody">
-          <form action="https://riversideholdings.co.za/Convee/UserLogin" method="post">
-            <div class="form-group">
-              <input type="text" name="username" class="form-control" id="Username" placeholder="Username / Email..."
-                data-rule="minlen:3" data-msg="Please enter username" required />
-              <div class="validation"></div>
-            </div>
-            <div class="form-group">
-              <input type="password" name="password" class="form-control" id="PasswordLogin" placeholder="Password..."
-                data-rule="minlen:3" data-msg="Please enter password" required />
-              <div class="validation"></div>
-            </div>
-            <button type="submit" class="form-control btn btn-primary" id="btnLogin">Log in</button>
-            <a href="" data-dismiss="modal" data-toggle="modal" data-target="#RegisterModal">Register</a>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <p>
-            By clicking Log in you agree to the <a href="#">terms of service</a> on
             this site and wish to confirm buying this package.
           </P>
         </div>
