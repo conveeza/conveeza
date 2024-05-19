@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-  
+
   $(window).scroll(function () {
     var height = $(window).height();
     var scroll = $(window).scrollTop();
@@ -202,24 +202,6 @@ jQuery(document).ready(function ($) {
   // custom code
 
 });
-
-var displayUser = document.getElementsByClassName("dispalyOnLogin");
-var LoggedInUser = localStorage.getItem("Username");
-var LoggedInUserDisplay = document.getElementById("userName");
-
-if (LoggedInUser != null) {
-  for (let i = 0; i < displayUser.length; i++) {
-    displayUser[i].style.display = "block";
-  }
-  LoggedInUserDisplay.innerHTML =" "+ LoggedInUser;
-  document.getElementById("dontdispalyOnLogin").style.display = "none";
-}
-else if (LoggedInUser == null || LoggedInUser == "") {
-  LoggedInUserDisplay.innerHTML = "Not logged in!";
-  document.getElementById("dontdispalyOnLogin").style.display = "block";
-}
-
-
 
 
 function popPackDet(n) {
