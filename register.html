@@ -44,7 +44,8 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active border-left"><a href="index.html#hero"><i class="fa fa-home"></i> Home</a></li>
+                    <li class="menu-active border-left"><a href="index.html#hero"><i class="fa fa-home"></i> Home</a>
+                    </li>
                     <li><a href="index.html#about-us"><i class="fa fa-info-circle"></i> About</a></li>
                     <li><a href="index.html#features"><i class="fa fa-laptop"></i> Products</a></li>
                     <li><a href="index.html#screenshots"><i class="fa fa-paint-brush"></i> Design gallery</a></li>
@@ -78,88 +79,90 @@
         </div>
     </header><!-- #header -->
 
-    <div class="container" style="font-size: 13px;">
-        <div class="">
-            <div class="" style="padding-top: 100px;">
-                <br>
-                <h3>Welcome!</h3>
-                <h4>Please fill out form to register.</h4>
-                <br>
-                <p id="message" style="color: red;"></p>
+    <section id="regSect">
+        <div class="container" style="font-size: 13px;">
+            <div class="">
+                <div class="" style="padding-top: 100px;">
+                    <br>
+                    <h3>Welcome!</h3>
+                    <h4>Please fill out form to register.</h4>
+                    <br>
+                    <p id="message" style="color: red;"></p>
 
-                <form>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h4><i class="fa-solid fa-user"></i> Details</h4>
-                            <div class="form-group">
-                                <label>Account Type</label>
-                                <select class="form-control form-control-sm" name="userRole" id="accountType" required>
-                                    <option value="Customer"> Individual</option>
-                                    <option value="Organization">Organization</option>
-                                    <option value="Employee">Employee</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control form-control-sm" name="username" id="username"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label>Surname</label>
-                                <input type="text" class="form-control form-control-sm" name="surname" id="surname"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control form-control-sm" name="email" id="email"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone number</label>
-                                <input type="text" class="form-control form-control-sm" name="phone" id="phone"required>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <h4><i class="fa-solid fa-lock"></i> Security</h4>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control form-control-sm" name="password"
-                                        id="password" required>
-                                    <div class="input-group-append">
-                                        <button type="button" class="input-group-text btn-secondary" id="showpass"
-                                            onclick="togglePasswordVisibility()">
-                                            <i class="fa fa-eye"></i>
-                                        </button>
-                                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4><i class="fa-solid fa-user"></i> Details</h4>
+                                <div class="form-group">
+                                    <label>Account Type</label>
+                                    <select class="form-control form-control-sm" name="userRole" id="accountType"
+                                        required>
+                                        <option value="Customer"> Individual</option>
+                                        <option value="Organization">Organization</option>
+                                        <option value="Employee">Employee</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control form-control-sm" name="username"
+                                        id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Surname</label>
+                                    <input type="text" class="form-control form-control-sm" name="surname" id="surname"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control form-control-sm" name="email" id="email"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone number</label>
+                                    <input type="text" class="form-control form-control-sm" name="phone" id="phone"
+                                        required>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" class="form-control form-control-sm" onkeyup="checkPasswords()"
-                                    name="pass2" id="pass2" required>
-                                <p id="passMessage"> </p>
+                            <div class="col-sm-6">
+                                <h4><i class="fa-solid fa-lock"></i> Security</h4>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control form-control-sm" name="password"
+                                            id="password" required>
+                                        <div class="input-group-append">
+                                            <button type="button" class="input-group-text btn-secondary" id="showpass"
+                                                onclick="togglePasswordVisibility()">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-control form-control-sm"
+                                        onkeyup="checkPasswords()" name="pass2" id="pass2" required>
+                                    <p id="passMessage"> </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-sm btn-success form-control" type="submit">Register</button>
-                        <p>Already have an account? <a href="/login.html">LOGIN</a></p>
-                        <div>
-                            <center>
-                                <p>
-                                    Need Help? Contact Support.<br>
-                                    email <a href="mailto:support@convee.co.za">support@convee.co.za</a><br>
-                                </p>
-                            </center>
+                        <div class="form-group">
+                            <button class="btn btn-sm btn-success form-control" type="submit">Register</button>
+                            <p>Already have an account? <a href="/login.html">LOGIN</a></p>
+                            <div>
+                                <center>
+                                    <p>
+                                        Need Help? Contact Support.<br>
+                                        email <a href="mailto:support@convee.co.za">support@convee.co.za</a><br>
+                                    </p>
+                                </center>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-
-
+    </section>
 
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
