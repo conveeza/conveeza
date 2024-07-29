@@ -58,12 +58,12 @@
                 <i class="fa fa-user"></i> Account
               </a>
               <div class="dropdown-menu" name="customer" aria-labelledby="dropdownAccountMnu">
-                <a href="/login.html" class="dropdown-item-sm text-dark">
+                <a href="/login.html" onclick="localStorage.setItem('loginType', 'Customer')" class="dropdown-item-sm text-dark">
                   <i class="fa-solid fa-user-lock"></i>
                   Customer Login
                 </a>
                 <br>
-                <a href="/login.html" name="employee" class="dropdown-item-sm text-dark">
+                <a href="/login.html" onclick="localStorage.setItem('loginType', 'Employee')" name="employee" class="dropdown-item-sm text-dark">
                   <i class="fa-solid fa-users-gear"></i>
                   Employee Login
                 </a>
@@ -448,7 +448,7 @@
           <div class="block-pricing">
             <div class="table">
               <h4>GENERAL</h4>
-              <h2>R1 500.00</h2>
+              <h2>R2 499.00</h2>
               <ul class="list-unstyled">
                 <li><b>Basic</b><br> website</li>
                 <li>Support within <b>72hrs</b></li>
@@ -484,7 +484,7 @@
           <div class="block-pricing">
             <div class="table">
               <h4>PERSONAL</h4>
-              <h2>R3 000.00</h2>
+              <h2>R4 499.00</h2>
               <ul class="list-unstyled">
                 <li><b>Advanced basic 2.0</b><br> website</li>
                 <li>Support within <b>48hrs</b></li>
@@ -495,7 +495,7 @@
               </ul>
               <div class="table_btn" id="advbasic">
                 <a href="#" onclick="popPackDet(this.id)" class="btn" data-toggle="modal" data-target="#buyModal"
-                  id="advbasic2.0pack"><i class="fa fa-shopping-cart"></i> Get Package</a>
+                  id="advbasicpack"><i class="fa fa-shopping-cart"></i> Get Package</a>
               </div>
             </div>
           </div>
@@ -505,9 +505,9 @@
           <div class="block-pricing">
             <div class="table">
               <h4>BUSINESS</h4>
-              <h2>R5000.00</h2>
+              <h2>R5 499.00</h2>
               <ul class="list-unstyled">
-                <li><b>General/eccomerce</b><br> website</li>
+                <li><b>General/ecommerce</b><br> website</li>
                 <li>Support within <b>24hrs</b></li>
                 <li><b></b>Database Storage</li>
                 <li>SSL Protection <i class="fa fa-lock"></i></li>
@@ -526,7 +526,7 @@
           <div class="block-pricing">
             <div class="table">
               <h4>Pro Enterprise</h4>
-              <h2>R8 500.00</h2>
+              <h2>R9 999.00</h2>
               <ul class="list-unstyled">
                 <li><b>Advanced application</b> website</li>
                 <li>Support within <b>24hrs</b></li>
@@ -543,7 +543,10 @@
           </div>
         </div>
       </div>
+      <br>
+      <p>All our website packages include a domain (example.com) worth R99.00 per annum.</p>
     </div>
+
   </section>
 
 
@@ -633,7 +636,7 @@
 
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="https://riversideHoldings.co.za/Convee/AddContactMessage" method="post" id="contactfrm"
+            <form action="" method="post" id="contactfrm"
               class="contactForm">
               <div class="form-group">
                 <input type="text" name="fullName" class="form-control" id="name" placeholder="Your Name"
@@ -671,7 +674,7 @@
                 <div class="validation"></div>
               </div>
               <div class="text-center">
-                <button type="submit" id="cntcMsgBtn">Send Message <i class="fa fa-paper-plane"></i></button>
+                <button type="button" id="cntcMsgBtn" class="btn btn-success">Send Message <i class="fa fa-paper-plane"></i></button>
               </div>
               <br>
               <h4 class="text-center msg-notification" id="subnotification">Form Submitted successfully!</h4>
@@ -808,8 +811,8 @@
         </div>
         <div class="modal-footer">
           <p>
-            By clicking Pay Now you agree to the <a href="#">terms of service</a> on
-            this site and wish to confirm buying this package.
+            By clicking on <a href="#">Get Started</a> you will be regirected to a new form to get you on board with us.
+            Our team will get back to you within 24-48hrs.
           </P>
         </div>
       </div>

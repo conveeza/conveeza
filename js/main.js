@@ -211,20 +211,26 @@ function popPackDet(n) {
   var serverApi = "https://riversideholdings.co.za/Convee"
 
   if (btnId == "basicpack") {
-    modTitle.innerHTML = "Buy Package: Basic"
+    modTitle.innerHTML = "Buy Package: Basic <br> R 2 499.00"
 
-    modBody.innerHTML = ``;
+    modBody.innerHTML = `<a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdiVtGKQuMcPJYcsf7T0Avj60ckA8dTjoAnGsiulCzzXpbEHg/viewform?usp=pp_url&entry.475315513=GENERAL+-+Basic" class="btn btn-primary">Get started</a>`;
+
+  }
+  else if (btnId == "advbasicpack") {
+    modTitle.innerHTML = "Buy Package:Advance Basic 2.0 <br> R4 499.00"
+
+    modBody.innerHTML = `<a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdiVtGKQuMcPJYcsf7T0Avj60ckA8dTjoAnGsiulCzzXpbEHg/viewform?usp=pp_url&entry.475315513=PERSONAL+-+Advanced+basic+2.0" class="btn btn-primary">Get Started</a>`;
 
   }
   else if (btnId == "geneccompack") {
-    modTitle.innerHTML = "Buy Package: Business"
+    modTitle.innerHTML = "Buy Package: Business <br> R5 499.00"
 
-    modBody.innerHTML = ``;
+    modBody.innerHTML = `<a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdiVtGKQuMcPJYcsf7T0Avj60ckA8dTjoAnGsiulCzzXpbEHg/viewform?usp=pp_url&entry.475315513=BUSINESS" class="btn btn-primary">Get Started</a>`;
   }
   else if (btnId == "entpropack") {
-    modTitle.innerHTML = "Buy Package: Pro Enterprise"
+    modTitle.innerHTML = "Buy Package: Pro Enterprise <br> R9 999.00"
 
-    modBody.innerHTML = ``;
+    modBody.innerHTML = `<a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdiVtGKQuMcPJYcsf7T0Avj60ckA8dTjoAnGsiulCzzXpbEHg/viewform?usp=pp_url&entry.475315513=Pro+Enterprise" class="btn btn-primary">Get Started</a>`;
 
   }
 }
